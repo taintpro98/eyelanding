@@ -1,4 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const HeroGlobe = dynamic(() => import("./hero-globe").then((mod) => mod.HeroGlobe), {
+  ssr: false,
+});
 
 export function Hero() {
   return (
@@ -6,6 +13,8 @@ export function Hero() {
       className="relative overflow-hidden px-4 pt-32 pb-20 sm:px-6 sm:pt-40 sm:pb-28 lg:px-8"
       aria-labelledby="hero-heading"
     >
+      {/* Wireframe globe - Pendle-style */}
+      <HeroGlobe />
       {/* Hero glow - teal orbs */}
       <div className="absolute inset-0 -z-10 overflow-visible">
         <div className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-emerald-500/30 blur-[100px]" />

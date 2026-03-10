@@ -1,0 +1,69 @@
+---
+title: API Access
+description: Programmatic access for institutional users
+---
+
+# API Access
+
+ALumiEye offers API access for Institutional plan subscribers who need to integrate our signals and data into their own systems.
+
+## Overview
+
+The API enables you to:
+
+- **Fetch signals** — Retrieve AI-generated signals programmatically
+- **Access market data** — Real-time and historical data for supported assets
+- **Smart money flow** — Institutional flow data via API
+- **Webhooks** — Receive real-time alerts when new signals are generated
+
+## Authentication
+
+API access uses API keys for authentication. Keys are issued to your account after Institutional plan activation.
+
+```bash
+# Example request with API key
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.alumieye.com/v1/signals
+```
+
+## Rate Limits
+
+| Plan | Requests/minute | Webhooks |
+|------|-----------------|----------|
+| Institutional | 1000 | 60/min |
+
+Contact your account manager for custom rate limits.
+
+## Endpoints
+
+### Signals
+
+```
+GET /v1/signals
+GET /v1/signals/:id
+```
+
+### Market Data
+
+```
+GET /v1/market/quotes/:symbol
+GET /v1/market/flow/:symbol
+```
+
+### Smart Money
+
+```
+GET /v1/smart-money/:symbol
+GET /v1/smart-money/:symbol/history
+```
+
+## Getting Started
+
+1. **Upgrade to Institutional** — Contact sales to activate
+2. **Generate API keys** — In your account settings under API
+3. **Review documentation** — Full API docs provided upon activation
+4. **Test in sandbox** — Sandbox environment available for development
+
+## Support
+
+Institutional customers receive dedicated support for API integration. Contact your account manager for assistance.

@@ -1,0 +1,66 @@
+---
+title: AI Signal Detection
+description: How our AI generates trading signals
+---
+
+# AI Signal Detection
+
+ALumiEye uses machine learning to analyze markets and generate actionable trading signals with quantified confidence.
+
+## How It Works
+
+### Data Pipeline
+
+1. **Ingestion** — We aggregate real-time data from exchanges, dark pools, and alternative sources
+2. **Feature Extraction** — Our models extract hundreds of features from each data dimension
+3. **Pattern Detection** — AI identifies recurring patterns that precede significant price movements
+4. **Signal Generation** — High-probability opportunities are surfaced with confidence scores
+
+### Model Architecture
+
+We use ensemble machine learning techniques:
+
+- **Multiple models** — Different models trained on different timeframes and asset classes
+- **Ensemble voting** — Signals are validated across multiple models
+- **Confidence scoring** — Each signal includes a 0-100 confidence score
+
+### Data Dimensions Analyzed
+
+- **Order flow** — Buy/sell pressure, block trades, dark pool activity
+- **Price action** — Support/resistance, breakout patterns, trend strength
+- **Volume profiles** — Volume at price, accumulation/distribution
+- **Options flow** — Unusual options activity, put/call ratios
+- **Alternative data** — Sentiment, news, and other signals
+
+## Understanding Signal Output
+
+Each signal includes:
+
+| Field | Description |
+|-------|-------------|
+| **Direction** | Long or short |
+| **Confidence** | 0-100 score indicating model certainty |
+| **Expected Value** | Risk-adjusted expected return |
+| **Time Horizon** | Short-term, swing, or position |
+| **Risk Level** | Low, medium, or high |
+
+## Signal Tiers
+
+### Starter Plan
+
+- Basic signals only
+- Up to 5 assets in watchlist
+- Daily signal digest
+
+### Pro Plan
+
+- Advanced signals with higher accuracy
+- Unlimited watchlist
+- Real-time alerts
+- Priority signal delivery
+
+### Institutional Plan
+
+- Custom model tuning
+- API access for programmatic signals
+- Dedicated support

@@ -1,0 +1,148 @@
+/* ALumiEye Docs - Warm beige (#ebe8e2) from logo, easy to read */
+
+/* Light theme - warm beige background from logo */
+.alumieye-docs {
+  --color-fd-primary: oklch(0.38 0.08 310);
+  --color-fd-primary-foreground: oklch(0.98 0.01 80);
+  --color-fd-accent: oklch(0.38 0.08 310 / 0.12);
+  --color-fd-accent-foreground: oklch(0.28 0.06 310);
+  --color-fd-background: oklch(0.94 0.02 80);
+  --color-fd-foreground: oklch(0.22 0.02 310);
+  --color-fd-muted: oklch(0.92 0.02 80);
+  --color-fd-muted-foreground: oklch(0.45 0.04 310);
+  --color-fd-border: oklch(0.85 0.03 80);
+  --color-fd-ring: oklch(0.38 0.08 310);
+  color-scheme: light;
+}
+
+/* Docs container - warm beige gradient (logo background) */
+.alumieye-docs {
+  background: linear-gradient(
+    180deg,
+    #ebe8e2 0%,
+    #e5e1da 50%,
+    #ebe8e2 100%
+  );
+  min-height: 100vh;
+  color: #2d2a30;
+}
+
+/* Ensure readable text throughout */
+.alumieye-docs,
+.alumieye-docs * {
+  --tw-text-opacity: 1;
+}
+
+.alumieye-docs p,
+.alumieye-docs li,
+.alumieye-docs td {
+  color: #2d2a30;
+}
+
+/* Page description */
+.alumieye-docs [data-slot="docs-description"] {
+  color: #5a5460;
+}
+
+/* Headings - dark for readability */
+.alumieye-docs h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1f1d23;
+}
+
+.alumieye-docs h2 {
+  font-weight: 600;
+  color: #2d2a30;
+  border-bottom: 1px solid rgba(109, 77, 122, 0.35);
+  padding-bottom: 0.5rem;
+}
+
+.alumieye-docs h3 {
+  color: #2d2a30;
+}
+
+/* Links - purple accent, dark enough to read */
+.alumieye-docs a:not([data-slot]) {
+  color: #5a4d6a;
+  transition: color 0.2s ease;
+}
+
+.alumieye-docs a:not([data-slot]):hover {
+  color: #6D4D7A;
+}
+
+/* Sidebar - warm beige */
+.alumieye-docs aside,
+.alumieye-docs [data-slot="sidebar"] {
+  background: #ebe8e2 !important;
+  border-right-color: rgba(109, 77, 122, 0.2) !important;
+}
+
+.alumieye-docs aside a,
+.alumieye-docs aside span,
+.alumieye-docs [data-slot="sidebar"] a,
+.alumieye-docs [data-slot="sidebar"] span {
+  color: #2d2a30 !important;
+}
+
+/* Main content area */
+.alumieye-docs main,
+.alumieye-docs [data-slot="docs-body"] {
+  background: transparent !important;
+}
+
+/* TOC sidebar */
+.alumieye-docs nav[data-slot="toc"] {
+  color: #2d2a30;
+}
+
+.alumieye-docs nav[data-slot="toc"] a {
+  color: #5a5460 !important;
+}
+
+/* Active nav item */
+.alumieye-docs a[data-active="true"],
+.alumieye-docs [data-active="true"] a {
+  color: #6D4D7A !important;
+}
+
+.alumieye-docs [data-active="true"] {
+  background: rgba(109, 77, 122, 0.12) !important;
+  border-radius: 0.5rem;
+}
+
+/* Code blocks - light bg, readable */
+.alumieye-docs pre {
+  background: #e0dcd4 !important;
+  border: 1px solid rgba(109, 77, 122, 0.25);
+  border-radius: 0.75rem;
+}
+
+.alumieye-docs code {
+  color: #4a4055;
+}
+
+.alumieye-docs pre code {
+  color: #2d2a30;
+}
+
+/* Blockquotes */
+.alumieye-docs blockquote {
+  border-left-color: #6D4D7A;
+  background: rgba(109, 77, 122, 0.06);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #3d3845;
+}
+
+/* Tables */
+.alumieye-docs table th {
+  background: rgba(109, 77, 122, 0.1);
+  color: #2d2a30;
+  border-color: rgba(109, 77, 122, 0.2);
+}
+
+.alumieye-docs table td {
+  border-color: rgba(109, 77, 122, 0.15);
+  color: #2d2a30;
+}
