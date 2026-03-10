@@ -6,12 +6,11 @@ export function Hero() {
       className="relative overflow-hidden px-4 pt-32 pb-20 sm:px-6 sm:pt-40 sm:pb-28 lg:px-8"
       aria-labelledby="hero-heading"
     >
-      {/* Background gradient and glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute right-0 top-1/3 w-[400px] h-[300px] rounded-full bg-primary/10 blur-[100px]" />
-        <div className="absolute left-0 bottom-1/4 w-[300px] h-[200px] rounded-full bg-primary/10 blur-[80px]" />
+      {/* Hero glow - teal orbs */}
+      <div className="absolute inset-0 -z-10 overflow-visible">
+        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-emerald-500/30 blur-[100px]" />
+        <div className="absolute right-0 top-1/3 h-[350px] w-[450px] rounded-full bg-emerald-500/20 blur-[90px]" />
+        <div className="absolute left-0 bottom-1/4 h-[280px] w-[350px] rounded-full bg-emerald-500/15 blur-[80px]" />
       </div>
 
       <div className="mx-auto max-w-4xl text-center">
