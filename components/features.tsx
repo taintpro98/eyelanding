@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity,
   TrendingUp,
@@ -7,87 +9,58 @@ import {
   Shield,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useLandingCopy } from "@/hooks/use-landing-copy";
 
-const features = [
-  {
-    icon: Activity,
-    title: "Real-time Market Intelligence",
-    description:
-      "Stay ahead with live market data, order flow, and institutional activity across multiple asset classes.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Smart Money Tracking",
-    description:
-      "Follow the flow of institutional capital and identify where the smart money is moving before the crowd.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI Signal Detection",
-    description:
-      "Machine learning models analyze patterns and generate actionable trading signals with quantified confidence.",
-  },
-  {
-    icon: BarChart3,
-    title: "Portfolio Analytics",
-    description:
-      "Comprehensive portfolio insights, risk metrics, and performance attribution to optimize your strategy.",
-  },
-  {
-    icon: LineChart,
-    title: "Advanced Charting",
-    description:
-      "Professional-grade charts with custom indicators, drawing tools, and seamless multi-timeframe analysis.",
-  },
-  {
-    icon: Shield,
-    title: "Risk Insights",
-    description:
-      "Real-time risk exposure, position sizing recommendations, and scenario analysis to protect your capital.",
-  },
-];
+const icons = [Activity, TrendingUp, Sparkles, BarChart3, LineChart, Shield];
 
 export function Features() {
+  const t = useLandingCopy();
+
   return (
     <section
       id="features"
-      className="border-t border-white/5 px-4 py-20 sm:px-6 lg:px-8"
+      className="relative border-t border-white/[0.06] px-3 py-16 sm:px-6 sm:py-24 lg:px-8"
       aria-labelledby="features-heading"
     >
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
       <div className="mx-auto max-w-7xl">
         <div className="text-center">
+          <p className="section-eyebrow mb-5">{t.features.eyebrow}</p>
           <h2
             id="features-heading"
-            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+            className="font-sans text-[1.65rem] font-semibold tracking-tight text-foreground min-[400px]:text-3xl sm:text-4xl md:text-[2.5rem]"
           >
-            Everything you need to trade smarter
+            {t.features.heading}
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Powerful tools designed for serious traders who demand an edge.
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg text-muted-foreground">
+            {t.features.subheading}
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <Card
-              key={feature.title}
-              className="border-white/10 bg-card/50 transition-all hover:border-primary/30 hover:bg-card/80"
-            >
-              <CardHeader>
-                <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 text-primary">
-                  <feature.icon className="h-5 w-5" aria-hidden />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  {feature.title}
-                </h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {t.features.items.map((feature, index) => {
+            const Icon = icons[index]!;
+            return (
+              <Card
+                key={feature.title}
+                className="group border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-transparent shadow-[0_24px_48px_-32px_rgba(0,0,0,0.8)] ring-1 ring-white/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_32px_64px_-28px_rgba(52,211,153,0.12)]"
+              >
+                <CardHeader>
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-primary/5 text-primary shadow-inner shadow-primary/10 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-105">
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </div>
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground">
+                    {feature.title}
+                  </h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

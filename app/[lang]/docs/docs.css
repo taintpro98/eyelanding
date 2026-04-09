@@ -1,0 +1,395 @@
+/* ALumiEye Docs — light / dark via next-themes (`html.light` / `html.dark`) */
+
+/* Typography: Geist sans everywhere in docs (prose + nav can otherwise pick up serif fallbacks) */
+.alumieye-docs {
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.alumieye-docs .prose,
+.alumieye-docs .prose :where(h1, h2, h3, h4, h5, h6) {
+  font-family: inherit;
+}
+
+.alumieye-docs pre,
+.alumieye-docs .prose :where(pre, code) {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Light — warm beige (logo)                                                     */
+/* -------------------------------------------------------------------------- */
+html.light .alumieye-docs {
+  --color-fd-primary: oklch(0.38 0.08 310);
+  --color-fd-primary-foreground: oklch(0.98 0.01 80);
+  --color-fd-accent: oklch(0.38 0.08 310 / 0.12);
+  --color-fd-accent-foreground: oklch(0.28 0.06 310);
+  --color-fd-background: oklch(0.94 0.02 80);
+  --color-fd-foreground: oklch(0.22 0.02 310);
+  --color-fd-muted: oklch(0.92 0.02 80);
+  --color-fd-muted-foreground: oklch(0.45 0.04 310);
+  --color-fd-border: oklch(0.85 0.03 80);
+  --color-fd-ring: oklch(0.38 0.08 310);
+  --color-fd-card: oklch(0.96 0.015 80);
+  color-scheme: light;
+}
+
+html.light .alumieye-docs {
+  background: linear-gradient(180deg, #ebe8e2 0%, #e5e1da 50%, #ebe8e2 100%);
+  min-height: 100vh;
+  color: #2d2a30;
+}
+
+html.light .alumieye-docs,
+html.light .alumieye-docs * {
+  --tw-text-opacity: 1;
+}
+
+html.light .alumieye-docs p,
+html.light .alumieye-docs li,
+html.light .alumieye-docs td {
+  color: #2d2a30;
+}
+
+html.light .alumieye-docs [data-slot="docs-description"] {
+  color: #5a5460;
+}
+
+html.light .alumieye-docs h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1f1d23;
+}
+
+html.light .alumieye-docs h2 {
+  font-weight: 600;
+  color: #2d2a30;
+  border-bottom: 1px solid rgba(109, 77, 122, 0.35);
+  padding-bottom: 0.5rem;
+}
+
+html.light .alumieye-docs h3 {
+  color: #2d2a30;
+}
+
+html.light .alumieye-docs a:not([data-slot]) {
+  color: #5a4d6a;
+  transition: color 0.2s ease;
+}
+
+html.light .alumieye-docs a:not([data-slot]):hover {
+  color: #6d4d7a;
+}
+
+html.light .alumieye-docs aside,
+html.light .alumieye-docs [data-slot="sidebar"] {
+  background: #ebe8e2 !important;
+  border-right-color: rgba(109, 77, 122, 0.2) !important;
+}
+
+html.light .alumieye-docs aside a,
+html.light .alumieye-docs aside span,
+html.light .alumieye-docs [data-slot="sidebar"] a,
+html.light .alumieye-docs [data-slot="sidebar"] span {
+  color: #2d2a30 !important;
+}
+
+html.light .alumieye-docs main,
+html.light .alumieye-docs [data-slot="docs-body"] {
+  background: transparent !important;
+}
+
+html.light .alumieye-docs nav[data-slot="toc"] {
+  color: #2d2a30;
+}
+
+html.light .alumieye-docs nav[data-slot="toc"] a {
+  color: #5a5460 !important;
+}
+
+html.light .alumieye-docs a[data-active="true"],
+html.light .alumieye-docs [data-active="true"] a {
+  color: #6d4d7a !important;
+}
+
+html.light .alumieye-docs [data-active="true"] {
+  background: rgba(109, 77, 122, 0.12) !important;
+  border-radius: 0.5rem;
+}
+
+html.light .alumieye-docs pre {
+  background: #e0dcd4 !important;
+  border: 1px solid rgba(109, 77, 122, 0.25);
+  border-radius: 0.75rem;
+}
+
+html.light .alumieye-docs code {
+  color: #4a4055;
+}
+
+html.light .alumieye-docs pre code {
+  color: #2d2a30;
+}
+
+html.light .alumieye-docs blockquote {
+  border-left-color: #6d4d7a;
+  background: rgba(109, 77, 122, 0.06);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #3d3845;
+}
+
+html.light .alumieye-docs table th {
+  background: rgba(109, 77, 122, 0.1);
+  color: #2d2a30;
+  border-color: rgba(109, 77, 122, 0.2);
+}
+
+html.light .alumieye-docs table td {
+  border-color: rgba(109, 77, 122, 0.15);
+  color: #2d2a30;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark — aligned with marketing / emerald accent                               */
+/* -------------------------------------------------------------------------- */
+html.dark .alumieye-docs {
+  --color-fd-primary: oklch(0.72 0.19 166);
+  --color-fd-primary-foreground: oklch(0.12 0.02 260);
+  --color-fd-accent: oklch(0.72 0.19 166 / 0.15);
+  --color-fd-accent-foreground: oklch(0.85 0.12 166);
+  --color-fd-background: oklch(0.08 0.02 260);
+  --color-fd-foreground: oklch(0.96 0.01 260);
+  --color-fd-muted: oklch(0.16 0.02 260);
+  --color-fd-muted-foreground: oklch(0.68 0.03 260);
+  --color-fd-border: oklch(0.28 0.03 260);
+  --color-fd-ring: oklch(0.72 0.19 166);
+  --color-fd-card: oklch(0.11 0.02 260);
+  color-scheme: dark;
+}
+
+html.dark .alumieye-docs {
+  background: linear-gradient(180deg, #08080c 0%, #050508 45%, #0a0c10 100%);
+  min-height: 100vh;
+  color: oklch(0.92 0.02 260);
+}
+
+html.dark .alumieye-docs p,
+html.dark .alumieye-docs li,
+html.dark .alumieye-docs td {
+  color: oklch(0.88 0.02 260);
+}
+
+html.dark .alumieye-docs [data-slot="docs-description"] {
+  color: oklch(0.65 0.03 260);
+}
+
+html.dark .alumieye-docs h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: oklch(0.98 0 0);
+}
+
+html.dark .alumieye-docs h2 {
+  font-weight: 600;
+  color: oklch(0.95 0.02 260);
+  border-bottom: 1px solid oklch(0.35 0.04 280);
+  padding-bottom: 0.5rem;
+}
+
+html.dark .alumieye-docs h3 {
+  color: oklch(0.93 0.02 260);
+}
+
+html.dark .alumieye-docs a:not([data-slot]) {
+  color: oklch(0.78 0.14 166);
+  transition: color 0.2s ease;
+}
+
+html.dark .alumieye-docs a:not([data-slot]):hover {
+  color: oklch(0.85 0.16 166);
+}
+
+html.dark .alumieye-docs aside,
+html.dark .alumieye-docs [data-slot="sidebar"] {
+  background: oklch(0.1 0.02 260) !important;
+  border-right-color: oklch(0.28 0.03 260) !important;
+}
+
+html.dark .alumieye-docs aside a,
+html.dark .alumieye-docs aside span,
+html.dark .alumieye-docs [data-slot="sidebar"] a,
+html.dark .alumieye-docs [data-slot="sidebar"] span {
+  color: oklch(0.9 0.02 260) !important;
+}
+
+html.dark .alumieye-docs main,
+html.dark .alumieye-docs [data-slot="docs-body"] {
+  background: transparent !important;
+}
+
+html.dark .alumieye-docs nav[data-slot="toc"] {
+  color: oklch(0.88 0.02 260);
+}
+
+html.dark .alumieye-docs nav[data-slot="toc"] a {
+  color: oklch(0.65 0.03 260) !important;
+}
+
+html.dark .alumieye-docs a[data-active="true"],
+html.dark .alumieye-docs [data-active="true"] a {
+  color: oklch(0.82 0.16 166) !important;
+}
+
+html.dark .alumieye-docs [data-active="true"] {
+  background: oklch(0.72 0.19 166 / 0.12) !important;
+  border-radius: 0.5rem;
+}
+
+html.dark .alumieye-docs pre {
+  background: oklch(0.14 0.02 260) !important;
+  border: 1px solid oklch(0.3 0.03 260);
+  border-radius: 0.75rem;
+}
+
+html.dark .alumieye-docs code {
+  color: oklch(0.82 0.08 260);
+}
+
+html.dark .alumieye-docs pre code {
+  color: oklch(0.92 0.02 260);
+}
+
+html.dark .alumieye-docs blockquote {
+  border-left-color: oklch(0.55 0.12 166);
+  background: oklch(0.72 0.19 166 / 0.06);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: oklch(0.8 0.03 260);
+}
+
+html.dark .alumieye-docs table th {
+  background: oklch(0.16 0.03 260);
+  color: oklch(0.95 0.02 260);
+  border-color: oklch(0.32 0.03 260);
+}
+
+html.dark .alumieye-docs table td {
+  border-color: oklch(0.28 0.03 260);
+  color: oklch(0.88 0.02 260);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile & narrow viewports                                                    */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 639px) {
+  .alumieye-docs {
+    min-width: 0;
+  }
+
+  /* Main article: safe horizontal insets + slightly tighter padding */
+  .alumieye-docs #nd-page {
+    max-width: 100%;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    padding-top: 1rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    row-gap: 0.75rem;
+  }
+
+  /* Sticky mobile top bar (title + search + menu) */
+  .alumieye-docs #nd-subnav {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.5rem, env(safe-area-inset-right));
+    min-height: 3.25rem;
+  }
+
+  /* Page title + description */
+  .alumieye-docs #nd-page > h1 {
+    font-size: 1.375rem !important;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    word-break: break-word;
+  }
+
+  .alumieye-docs #nd-page > p.text-lg {
+    font-size: 0.9375rem !important;
+    line-height: 1.55;
+    margin-bottom: 1.25rem !important;
+  }
+
+  /* MDX / typography */
+  .alumieye-docs .prose {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .alumieye-docs .prose h2 {
+    font-size: 1.2rem;
+    margin-top: 1.75rem;
+  }
+
+  .alumieye-docs .prose h3 {
+    font-size: 1.05rem;
+    margin-top: 1.35rem;
+  }
+
+  .alumieye-docs .prose h4 {
+    font-size: 1rem;
+  }
+
+  .alumieye-docs .prose p,
+  .alumieye-docs .prose li {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Fumadocs wraps tables in overflow-auto */
+  .alumieye-docs .prose .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    margin-left: -0.125rem;
+    margin-right: -0.125rem;
+    padding-left: 0.125rem;
+    padding-right: 0.125rem;
+  }
+
+  .alumieye-docs .prose table {
+    font-size: 0.8125rem;
+  }
+
+  /* Code */
+  .alumieye-docs .prose pre,
+  html.light .alumieye-docs pre,
+  html.dark .alumieye-docs pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.8125rem;
+    line-height: 1.55;
+  }
+
+  .alumieye-docs .prose :not(pre) > code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Inline images in MDX */
+  .alumieye-docs .prose img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Mobile TOC strip — comfortable tap target + safe insets */
+  .alumieye-docs [data-toc-popover] header {
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  .alumieye-docs [data-toc-popover-trigger] {
+    min-height: 2.75rem;
+    touch-action: manipulation;
+  }
+}
