@@ -1,16 +1,123 @@
 ---
-title: Theo dõi dòng tiền thông minh
-description: Theo dõi dòng vốn tổ chức và giao dịch khối
+title: Vị Thế & Danh Mục
+description: Theo dõi giao dịch trực tiếp và trực quan hóa phân bổ vốn
 ---
 
-# Theo dõi dòng tiền thông minh
+# Vị Thế & Danh Mục
 
-Theo dõi dòng vốn tổ chức và phát hiện giao dịch khối bất thường trước đám đông.
+Hai trong số những tính năng mạnh nhất của ALumiEye cho trader tích cực: **Vị thế** để theo dõi mọi giao dịch đang mở và đã đóng theo thời gian thực, và **Danh mục** để có cái nhìn tổng quan về cách vốn của bạn được phân bổ.
 
-## Khả năng
+---
 
-- Phát hiện tích lũy và phân phối bất thường
-- Theo dõi giao dịch khối lớn
-- Bối cảnh theo ngành và tài sản
+## Trang Vị Thế
 
-Kết hợp với tín hiệu AI để đánh giá cơ hội.
+Trang Vị thế hiển thị mọi giao dịch liên kết với tài khoản của bạn — đang mở, gần đây đã đóng, hoặc đang trong quá trình chuyển tiếp — với dữ liệu trực tiếp để bạn luôn biết mình đang đứng ở đâu.
+
+### Các Loại Trạng Thái
+
+Vị thế trải qua một vòng đời. Hiểu trạng thái giúp bạn biết hành động nào (nếu có) cần thiết:
+
+| Trạng thái | Ý nghĩa |
+|---|---|
+| **Đang mở lệnh** | Lệnh mua đã được đặt và đang chờ khớp |
+| **Đã mở** | Lệnh đã khớp — bạn đã vào giao dịch |
+| **Đang chạy** | Vị thế đang hoạt động với lãi/lỗ cập nhật trực tiếp |
+| **Đang đóng** | Lệnh bán/thoát đã được đặt và đang chờ khớp |
+| **Đang hủy** | Lệnh đang trong quá trình hủy |
+| **Đã đóng** | Giao dịch đã thoát hoàn toàn |
+
+### Kỳ Hạn Vị Thế
+
+Mỗi vị thế được phân loại theo khung thời gian:
+
+| Kỳ hạn | Ý nghĩa |
+|---|---|
+| **Ngắn hạn** | Giao dịch dự kiến kéo dài vài ngày |
+| **Trung hạn** | Giao dịch dự kiến kéo dài vài tuần |
+
+### Đọc Từng Hàng Vị Thế
+
+| Cột | Hiển thị gì |
+|---|---|
+| **Mã** | Tài sản đang giao dịch |
+| **Hướng** | MUA (long) hoặc BÁN (short) |
+| **Trạng thái** | Giai đoạn vòng đời hiện tại (xem ở trên) |
+| **Kỳ hạn** | Ngắn hạn hoặc trung hạn |
+| **Giá trung bình** | Giá vào lệnh trung bình của bạn |
+| **Stop Loss** | Mức giá cắt lỗ để giới hạn thua lỗ |
+| **Kích thước** | Kích thước vị thế tính theo phần trăm chuẩn hóa của tổng vốn |
+| **Công suất** | Thanh tiến trình cho thấy bao nhiêu kích thước vị thế đã được khớp |
+| **Giá hiện tại** | Giá thị trường mới nhất (nhấn Làm mới để cập nhật) |
+| **Lãi/Lỗ hiện tại** | Phần trăm lãi hoặc lỗ từ giá vào đến hiện tại |
+| **Lợi nhuận vị thế** | Phần trăm lợi nhuận tổng trên toàn bộ kích thước vị thế |
+| **Khoảng cách đến Stop** | Giá hiện tại cách stop loss bao xa, tính theo phần trăm |
+
+---
+
+### Lọc Vị Thế
+
+Dùng thanh lọc ở đầu trang để tìm vị thế cụ thể nhanh hơn:
+
+- **Tìm mã** — Nhập bất kỳ ticker nào để lọc theo tài sản đó
+- **Pills trạng thái** — Nhấn Tất cả, Đang chạy, Đang mở lệnh, Đã mở, Đang đóng, Đang hủy, hoặc Đã đóng
+- **Chỉ xem đang hoạt động** — Tích ô này để ẩn tất cả vị thế đã đóng và chỉ hiển thị giao dịch đang chạy
+
+Bộ lọc tự động đặt lại trang về trang 1.
+
+---
+
+### Làm Mới Dữ Liệu Trực Tiếp
+
+Các cột **Giá hiện tại**, **Lãi/Lỗ** và **Lợi nhuận** không tự động cập nhật để tránh làm chậm kết nối. Nhấn biểu tượng **Làm mới** trên bất kỳ hàng nào để lấy giá mới nhất cho vị thế đó.
+
+---
+
+### Trang Chi Tiết Vị Thế
+
+Nhấn bất kỳ hàng nào để mở trang chi tiết đầy đủ cho vị thế đó. Bạn sẽ thấy:
+
+- Thẻ tóm tắt với tất cả số liệu quan trọng
+- **Lịch sử lệnh** — mọi lệnh tạo nên vị thế này (vào lệnh, đóng một phần, đóng hoàn toàn)
+- Nút làm mới giá trực tiếp
+
+---
+
+## Trang Danh Mục
+
+> Danh mục chỉ dành cho gói **Premium**.
+
+Trang Danh mục cho bạn cái nhìn toàn cảnh về toàn bộ phân bổ vốn — không chỉ từng giao dịch riêng lẻ, mà cách mọi thứ kết hợp với nhau.
+
+### Thẻ Tóm Tắt
+
+Ở đầu trang:
+
+| Thẻ | Hiển thị gì |
+|---|---|
+| **Tổng giá trị** | Tổng giá trị của tất cả vị thế cộng tiền mặt |
+| **Tiền mặt** | Tiền mặt sẵn có, với phần trăm của tổng danh mục |
+| **Vị thế đang hoạt động** | Có bao nhiêu vị thế đang mở |
+
+### Biểu Đồ Phân Bổ
+
+Tính năng chính là biểu đồ phân bổ tương tác hiển thị mọi khoản nắm giữ như một lát:
+
+- Mã tài sản và phần trăm tỷ trọng
+- Giá vào lệnh so với giá hiện tại
+- Phần trăm lợi nhuận (xanh nếu lãi, đỏ nếu lỗ)
+
+Nhấn bất kỳ lát nào để chuyển trực tiếp đến trang chi tiết vị thế đó.
+
+### Tự Động Làm Mới
+
+Danh mục tự động làm mới mỗi **30 giây**. Bạn cũng có thể nhấn nút **Làm mới** thủ công để cập nhật ngay lập tức.
+
+---
+
+## Cách Dùng Vị Thế và Danh Mục Cùng Nhau
+
+**Quy trình hàng ngày:**
+
+1. Mở **Vị thế** — kiểm tra tất cả giao dịch đang chạy. Làm mới giá cho bất kỳ vị thế nào gần stop loss
+2. Mở **Danh mục** — kiểm tra phân bổ của bạn. Nếu một tài sản chiếm quá nhiều biểu đồ, hãy xem xét liệu bạn có đang tập trung quá nhiều vào một mã không
+3. Đối chiếu với **Tín hiệu** — nếu bạn thấy tín hiệu Đóng cho tài sản bạn đang nắm giữ, kiểm tra lãi/lỗ hiện tại của vị thế và quyết định có nên hành động không

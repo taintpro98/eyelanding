@@ -1,66 +1,115 @@
 ---
-title: AI Signal Detection
-description: How our AI generates trading signals
+title: Trading Signals
+description: How to read, filter, and act on ALumiEye trading signals
 ---
 
-# AI Signal Detection
+# Trading Signals
 
-ALumiEye uses machine learning to analyze markets and generate actionable trading signals with quantified confidence.
+The Signals page is the heart of ALumiEye. It shows every buy and sell signal detected by the AI engine in real time, across all assets in your subscribed market.
 
-## How It Works
+---
 
-### Data Pipeline
+## What Is a Signal?
 
-1. **Ingestion** — We aggregate real-time data from exchanges, dark pools, and alternative sources
-2. **Feature Extraction** — Our models extract hundreds of features from each data dimension
-3. **Pattern Detection** — AI identifies recurring patterns that precede significant price movements
-4. **Signal Generation** — High-probability opportunities are surfaced with confidence scores
+A signal is a notification that the AI has detected a potential trading opportunity. It does **not** tell you to blindly buy or sell — it tells you that certain conditions are met that have historically preceded a price move.
 
-### Model Architecture
+Think of it like a weather forecast: the AI says "conditions look favourable for a move upward." You still decide whether to act.
 
-We use ensemble machine learning techniques:
+---
 
-- **Multiple models** — Different models trained on different timeframes and asset classes
-- **Ensemble voting** — Signals are validated across multiple models
-- **Confidence scoring** — Each signal includes a 0-100 confidence score
+## Reading the Signals Table
 
-### Data Dimensions Analyzed
+Each row in the signals table contains:
 
-- **Order flow** — Buy/sell pressure, block trades, dark pool activity
-- **Price action** — Support/resistance, breakout patterns, trend strength
-- **Volume profiles** — Volume at price, accumulation/distribution
-- **Options flow** — Unusual options activity, put/call ratios
-- **Alternative data** — Sentiment, news, and other signals
+| Column | What it means |
+|---|---|
+| **Symbol** | The asset ticker (e.g. `VNM`, `BTCUSDT`) |
+| **Type** | `BUY` (green badge) or `SELL` (red badge) |
+| **Quantity** | Signal strength expressed as a percentage |
+| **Price** | The asset's price at the moment the signal was generated |
+| **Time** | How long ago the signal was created (e.g. "5 minutes ago") |
 
-## Understanding Signal Output
+### Signal Types
 
-Each signal includes:
+Beyond just buy and sell, each signal has a sub-type that describes what the AI detected:
 
-| Field | Description |
-|-------|-------------|
-| **Direction** | Long or short |
-| **Confidence** | 0-100 score indicating model certainty |
-| **Expected Value** | Risk-adjusted expected return |
-| **Time Horizon** | Short-term, swing, or position |
-| **Risk Level** | Low, medium, or high |
+| Signal Type | Meaning |
+|---|---|
+| **Open** | A new position opportunity is detected — first signal for a move |
+| **Increase** | An existing buy signal is getting stronger — consider adding to a position |
+| **Decrease** | An existing buy signal is weakening — consider reducing exposure |
+| **Close** | The move appears to be ending — consider closing a position |
 
-## Signal Tiers
+---
 
-### Starter Plan
+## Understanding Signal Strength (Quantity)
 
-- Basic signals only
-- Up to 5 assets in watchlist
-- Daily signal digest
+The **Quantity** column shows how strong the signal is, expressed as a percentage. The higher the number, the more confident the AI is.
 
-### Pro Plan
+| Strength | Colour | What it means |
+|---|---|---|
+| **20% and above** | Red | Very strong — the AI has high conviction |
+| **10% – 20%** | Orange | Strong — worth close attention |
+| **2% – 10%** | Blue | Moderate — valid but less urgent |
+| **Below 2%** | Grey | Weak — treat with caution |
 
-- Advanced signals with higher accuracy
-- Unlimited watchlist
-- Real-time alerts
-- Priority signal delivery
+> **Beginner tip:** If you are new, focus on signals at **10% or above**. Stronger signals have a higher historical hit rate. Do not act on every signal you see — wait for the ones that align with your own view.
 
-### Institutional Plan
+---
 
-- Custom model tuning
-- API access for programmatic signals
-- Dedicated support
+## Filtering Signals
+
+You can narrow down the signal list using filters at the top of the page.
+
+> **Note:** Signal filtering is available on **Pro and Premium** plans.
+
+**Available filters:**
+
+- **Symbol** — Type a ticker to show only signals for that asset (e.g. `BTC`, `VNM`)
+- **Side** — Filter to show only `BUY` signals or only `SELL` signals
+- **Signal Type** — Filter by `open`, `close`, `increase`, or `decrease`
+- **Date range** — Show signals from a specific time window
+
+Click **Apply** after selecting your filters, or **Clear** to reset.
+
+---
+
+## Pagination
+
+Signals are shown **15 per page**, newest first. Use the **Previous** and **Next** buttons at the bottom of the table to move between pages.
+
+The total signal count is shown above the table so you always know how many signals match your current filter.
+
+---
+
+## On Mobile
+
+On smaller screens, each signal is shown as a card rather than a table row. The left border colour tells you the direction:
+
+- **Green border** — BUY signal
+- **Red border** — SELL signal
+
+---
+
+## How to Use Signals in Practice
+
+### For beginners
+
+1. Open the Signals page each morning
+2. Filter by your most-watched symbol
+3. Look for a fresh **Open** signal with quantity above 10%
+4. Check the Analysis page for that symbol to confirm the trend direction
+5. If the trend and the signal agree — investigate further before trading
+
+### For active traders
+
+1. Keep the Signals page open in a browser tab
+2. Set a filter for your watchlist symbols
+3. Watch for **Increase** signals on positions you already hold — these can confirm you should stay in
+4. Watch for **Close** or **Decrease** signals as exits indicators
+
+---
+
+## Advanced Analytics
+
+Premium users have access to advanced signal analytics below the signals table, including aggregated signal patterns and historical performance breakdowns per asset.

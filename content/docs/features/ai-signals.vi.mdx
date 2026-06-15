@@ -1,17 +1,115 @@
 ---
-title: Phát hiện tín hiệu AI
-description: Cách AI tạo tín hiệu giao dịch
+title: Tín Hiệu Giao Dịch
+description: Cách đọc, lọc và hành động dựa trên tín hiệu ALumiEye
 ---
 
-# Phát hiện tín hiệu AI
+# Tín Hiệu Giao Dịch
 
-ALumiEye dùng học máy để phân tích thị trường và tạo tín hiệu giao dịch với điểm tin cậy được định lượng.
+Trang Tín hiệu là trái tim của ALumiEye. Nó hiển thị mọi tín hiệu mua và bán được phát hiện bởi động cơ AI theo thời gian thực, trên tất cả tài sản trong thị trường bạn đăng ký.
 
-## Cách hoạt động
+---
 
-1. **Thu thập** — Dữ liệu thời gian thực từ sàn, dark pool và nguồn thay thế
-2. **Trích đặc trưng** — Mô hình trích xuất đặc trưng từ từng chiều dữ liệu
-3. **Phát hiện mẫu** — AI nhận diện mẫu lặp lại trước biến động giá lớn
-4. **Tạo tín hiệu** — Cơ hội xác suất cao kèm điểm tin cậy
+## Tín Hiệu Là Gì?
 
-Mỗi tín hiệu bao gồm chỉ số rủi ro và khuyến nghị thời điểm.
+Tín hiệu là thông báo rằng AI đã phát hiện một cơ hội giao dịch tiềm năng. Nó **không** có nghĩa là bạn phải mù quáng mua hoặc bán — nó cho bạn biết rằng một số điều kiện đã được đáp ứng, những điều kiện này trong lịch sử thường báo trước một biến động giá.
+
+Hãy nghĩ như dự báo thời tiết: AI nói "điều kiện thuận lợi cho một biến động tăng." Bạn vẫn quyết định có hành động hay không.
+
+---
+
+## Đọc Bảng Tín Hiệu
+
+Mỗi hàng trong bảng tín hiệu chứa:
+
+| Cột | Ý nghĩa |
+|---|---|
+| **Mã** | Ticker tài sản (ví dụ: `VNM`, `BTCUSDT`) |
+| **Loại** | `MUA` (huy hiệu xanh) hoặc `BÁN` (huy hiệu đỏ) |
+| **Số lượng** | Độ mạnh tín hiệu tính theo phần trăm |
+| **Giá** | Giá tài sản tại thời điểm tín hiệu được tạo |
+| **Thời gian** | Tín hiệu được tạo cách đây bao lâu (ví dụ: "5 phút trước") |
+
+### Loại Tín Hiệu
+
+Ngoài mua và bán, mỗi tín hiệu có một loại phụ mô tả những gì AI phát hiện:
+
+| Loại tín hiệu | Ý nghĩa |
+|---|---|
+| **Mở** | Phát hiện cơ hội vị thế mới — tín hiệu đầu tiên cho một biến động |
+| **Tăng** | Tín hiệu mua hiện tại đang mạnh hơn — có thể xem xét thêm vào vị thế |
+| **Giảm** | Tín hiệu mua đang yếu đi — có thể xem xét giảm bớt |
+| **Đóng** | Biến động có vẻ kết thúc — có thể xem xét đóng vị thế |
+
+---
+
+## Hiểu Độ Mạnh Tín Hiệu (Số Lượng)
+
+Cột **Số lượng** cho thấy tín hiệu mạnh đến đâu, tính theo phần trăm. Số càng cao, AI càng tự tin.
+
+| Độ mạnh | Màu sắc | Ý nghĩa |
+|---|---|---|
+| **20% trở lên** | Đỏ | Rất mạnh — AI có độ tin cậy cao |
+| **10% – 20%** | Cam | Mạnh — đáng chú ý |
+| **2% – 10%** | Xanh dương | Trung bình — hợp lệ nhưng ít cấp bách hơn |
+| **Dưới 2%** | Xám | Yếu — cần thận trọng |
+
+> **Mẹo cho người mới:** Nếu bạn mới bắt đầu, hãy tập trung vào các tín hiệu **từ 10% trở lên**. Đừng hành động theo mọi tín hiệu — hãy chờ những tín hiệu phù hợp với quan điểm của bạn.
+
+---
+
+## Lọc Tín Hiệu
+
+Bạn có thể thu hẹp danh sách tín hiệu bằng bộ lọc ở đầu trang.
+
+> **Lưu ý:** Lọc tín hiệu chỉ dành cho gói **Pro và Premium**.
+
+**Bộ lọc có sẵn:**
+
+- **Mã** — Nhập ticker để chỉ hiển thị tín hiệu cho tài sản đó (ví dụ: `BTC`, `VNM`)
+- **Hướng** — Lọc chỉ tín hiệu `MUA` hoặc chỉ `BÁN`
+- **Loại tín hiệu** — Lọc theo `mở`, `đóng`, `tăng` hoặc `giảm`
+- **Khoảng thời gian** — Hiển thị tín hiệu từ một cửa sổ thời gian cụ thể
+
+Nhấn **Áp dụng** sau khi chọn bộ lọc, hoặc **Xóa** để đặt lại.
+
+---
+
+## Phân Trang
+
+Tín hiệu được hiển thị **15 mục mỗi trang**, mới nhất trước. Dùng nút **Trước** và **Tiếp** ở cuối bảng để di chuyển giữa các trang.
+
+Tổng số tín hiệu hiển thị phía trên bảng để bạn luôn biết có bao nhiêu tín hiệu khớp với bộ lọc hiện tại.
+
+---
+
+## Trên Di Động
+
+Trên màn hình nhỏ hơn, mỗi tín hiệu hiển thị dưới dạng thẻ thay vì hàng trong bảng. Màu viền bên trái cho biết hướng:
+
+- **Viền xanh lá** — Tín hiệu MUA
+- **Viền đỏ** — Tín hiệu BÁN
+
+---
+
+## Cách Dùng Tín Hiệu Trong Thực Tế
+
+### Dành cho người mới
+
+1. Mở trang Tín hiệu mỗi buổi sáng
+2. Lọc theo mã bạn theo dõi nhiều nhất
+3. Tìm tín hiệu **Mở** mới với số lượng trên 10%
+4. Kiểm tra trang Phân tích cho mã đó để xác nhận hướng xu hướng
+5. Nếu xu hướng và tín hiệu nhất quán — tìm hiểu thêm trước khi giao dịch
+
+### Dành cho trader tích cực
+
+1. Giữ trang Tín hiệu mở trên một tab trình duyệt
+2. Đặt bộ lọc cho các mã trong danh sách theo dõi
+3. Chú ý tín hiệu **Tăng** trên vị thế bạn đang nắm giữ — những tín hiệu này xác nhận bạn nên tiếp tục giữ
+4. Chú ý tín hiệu **Đóng** hoặc **Giảm** như chỉ báo thoát lệnh
+
+---
+
+## Phân Tích Nâng Cao
+
+Người dùng Premium có quyền truy cập phân tích tín hiệu nâng cao bên dưới bảng tín hiệu, bao gồm các mẫu tín hiệu tổng hợp và phân tích hiệu suất lịch sử theo từng tài sản.

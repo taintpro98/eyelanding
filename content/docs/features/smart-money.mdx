@@ -1,52 +1,123 @@
 ---
-title: Smart Money Tracking
-description: Follow institutional capital flow
+title: Positions & Portfolio
+description: Track your trades live and visualise your capital allocation
 ---
 
-# Smart Money Tracking
+# Positions & Portfolio
 
-Institutional investors often move markets. ALumiEye helps you identify and follow their activity before it becomes obvious to the crowd.
+Two of ALumiEye's most powerful features for active traders: **Positions** for tracking every open and closed trade in real time, and **Portfolio** for a visual overview of how your capital is spread.
 
-## What is Smart Money?
+---
 
-Smart money refers to capital controlled by sophisticated investors—hedge funds, family offices, and institutional traders—who typically have more information, better analysis, and longer time horizons than retail traders.
+## Positions Page
 
-## How We Track It
+The Positions page shows every trade linked to your account — open, recently closed, or in transition — with live data so you always know where you stand.
 
-### Block Trade Detection
+### Status Types
 
-We monitor for large block trades that typically indicate institutional activity. These trades often appear in dark pools or as negotiated prints.
+Positions move through a lifecycle. Understanding the status helps you know what action (if any) is needed:
 
-### Accumulation Patterns
+| Status | Meaning |
+|---|---|
+| **Opening** | A buy order has been placed and is waiting to fill |
+| **Opened** | The order filled — you are now in the trade |
+| **Running** | Active position with live P&L updating |
+| **Closing** | A sell/exit order has been placed and is waiting to fill |
+| **Cancelling** | An order is in the process of being cancelled |
+| **Closed** | The trade is fully exited |
 
-Our algorithms detect when institutions are quietly accumulating positions over time. We look for:
+### Position Term
 
-- Volume spikes without price movement
-- Unusual options activity
-- Dark pool accumulation
+Each position is classified by time horizon:
 
-### Distribution Warnings
+| Term | What it means |
+|---|---|
+| **Short-term** | A trade expected to last days |
+| **Mid-term** | A trade expected to last weeks |
 
-Get notified when smart money appears to be distributing. Early detection can help you avoid holding through institutional sell-offs.
+### Reading Each Position Row
 
-## Using Smart Money Data
+| Column | What it shows |
+|---|---|
+| **Symbol** | The asset being traded |
+| **Side** | BUY (long) or SELL (short) |
+| **Status** | Current lifecycle stage (see above) |
+| **Term** | Short-term or mid-term |
+| **Avg Price** | Your average entry price |
+| **Stop Loss** | The price at which the position will be cut to limit loss |
+| **Size** | Position size as a normalised percentage of total capital |
+| **Capacity** | A progress bar showing how much of the planned position size has been filled |
+| **Current Price** | The latest market price (click Refresh to update) |
+| **Current P&L** | Your profit or loss percentage from entry to now |
+| **Position Return** | The total return percentage on the full position size |
+| **Distance to Stop** | How far the current price is from your stop loss, as a percentage |
 
-### In Your Watchlist
+---
 
-Add assets to your watchlist and we'll track smart money flow for each. You'll see:
+### Filtering Positions
 
-- Net flow direction (accumulation vs. distribution)
-- Flow strength (how confident we are in the signal)
-- Historical context (how current flow compares to typical)
+Use the filter bar at the top of the page to find specific positions quickly:
 
-### With AI Signals
+- **Symbol search** — Type any ticker to filter to that asset
+- **Status pills** — Click All, Running, Opening, Opened, Closing, Cancelling, or Closed
+- **Active only toggle** — Check this box to hide all closed positions and show only live trades
 
-Combine smart money tracking with our AI signals for higher conviction. When both align, the probability of a successful trade increases.
+Filters reset the page back to page 1 automatically.
 
-### Alerts
+---
 
-Set up alerts for:
+### Refreshing Live Data
 
-- New accumulation in a watched asset
-- Distribution warnings
-- Unusual volume spikes
+The **Current Price**, **P&L**, and **Return** columns do not update automatically to avoid overwhelming your connection. Click the **Refresh** icon on any row to pull the latest price for that specific position.
+
+---
+
+### Position Detail Page
+
+Click any row to open the full detail page for that position. Here you will find:
+
+- A summary card with all key metrics
+- **Order history** — every order that made up this position (entry, partial closes, full close)
+- A refresh button for live price
+
+---
+
+## Portfolio Page
+
+> Portfolio is available on **Premium** plans only.
+
+The Portfolio page gives you a bird's-eye view of your entire capital allocation — not just individual trades, but how everything fits together.
+
+### Summary Cards
+
+At the top of the page:
+
+| Card | What it shows |
+|---|---|
+| **Total Value** | The combined value of all positions plus cash |
+| **Cash** | Your available cash, with its percentage of total portfolio |
+| **Active Positions** | How many positions are currently open |
+
+### Allocation Chart
+
+The main feature is an interactive allocation chart showing every holding as a slice:
+
+- Asset symbol and weight percentage
+- Entry price vs current price
+- Return percentage (green for profit, red for loss)
+
+Click any slice to jump directly to that position's detail page.
+
+### Auto-Refresh
+
+The portfolio refreshes automatically every **30 seconds**. You can also click the manual **Refresh** button to force an immediate update.
+
+---
+
+## How to Use Positions and Portfolio Together
+
+**Daily routine example:**
+
+1. Open **Positions** — check all running trades. Refresh prices for any position near its stop loss
+2. Open **Portfolio** — check your allocation. If one asset dominates the chart, consider whether you are over-exposed
+3. Cross-reference with **Signals** — if you see a Close signal for an asset you hold, check the position's current P&L and decide whether to act

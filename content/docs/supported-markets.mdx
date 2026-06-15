@@ -1,60 +1,91 @@
 ---
 title: Supported Markets
-description: Asset classes and coverage
+description: Which markets and assets ALumiEye covers
 ---
 
 # Supported Markets
 
-ALumiEye currently supports the following asset classes and markets.
+ALumiEye currently covers two markets: the **Vietnamese stock market** and **cryptocurrency**. Each market has its own set of assets monitored by the signal engine.
 
-## US Equities
+---
 
-Full coverage of all US-listed stocks:
+## Vietnamese Stock Market
 
-- **NYSE** — All listed securities
-- **NASDAQ** — All listed securities
-- **Pre-market & After-hours** — Extended session data
+The Stocks market focuses on publicly listed Vietnamese companies, tracked through the HOSE exchange.
 
-### Data Included
+### Key Indices Monitored
 
-- Real-time quotes
-- Order flow
-- Dark pool activity
-- Options flow (when available)
+| Index | What it represents |
+|---|---|
+| **VN Index** | The main benchmark index of the Vietnamese stock market |
+| **VN30** | The 30 largest and most liquid stocks on HOSE |
+| **HOSE Value** | Total trading value on the HOSE exchange for the day |
+| **Net Foreign** | Net buying or selling by foreign investors — a key sentiment indicator |
 
-## Forex
+> **What is Net Foreign?** Foreign institutional investors are closely watched in the Vietnamese market. When Net Foreign is positive, foreign funds are net buyers — often considered a bullish signal. When negative, they are net sellers.
 
-Major forex pairs with institutional-grade data:
+### How to Interpret VN Index
 
-| Pair | Coverage |
-|------|----------|
-| EUR/USD | Full |
-| GBP/USD | Full |
-| USD/JPY | Full |
-| USD/CHF | Full |
-| AUD/USD | Full |
-| USD/CAD | Full |
+- **Rising VN Index** — The overall market is gaining. Conditions favour bullish signals.
+- **Falling VN Index** — The overall market is losing ground. Signals on the sell side may be more reliable.
+- **VN Index vs individual stock** — A stock can go up even when VN Index falls, and vice versa. Always check the individual stock's Analysis page rather than relying solely on the index.
 
-Additional pairs available on Pro and Institutional plans.
+### Vietnamese Stock Signals
 
-## Cryptocurrencies
+Signals on the Stocks market are generated for individual Vietnamese company tickers. Examples include `VNM` (Vinamilk), `VIC` (Vingroup), `HPG` (Hoa Phat), and many others across all sectors.
 
-Popular cryptocurrencies with exchange data:
+---
 
-| Asset | Exchanges |
-|-------|-----------|
-| Bitcoin (BTC) | Major CEXs |
-| Ethereum (ETH) | Major CEXs |
-| Major altcoins | Varies by plan |
+## Cryptocurrency Market
+
+The Crypto market covers the most liquid cryptocurrency pairs, all quoted in USDT (Tether).
+
+### Covered Assets
+
+| Symbol | Asset |
+|---|---|
+| **BTCUSDT** | Bitcoin |
+| **ETHUSDT** | Ethereum |
+| **BNBUSDT** | BNB (Binance Coin) |
+| **SOLUSDT** | Solana |
+| **XRPUSDT** | XRP (Ripple) |
+
+Additional assets are added based on liquidity and signal quality. Check the Signals and Market pages for the current full list.
+
+### Key Dashboard Metrics for Crypto
+
+When your selected market is Crypto, the Dashboard shows:
+
+| Metric | What it means |
+|---|---|
+| **BTC Price** | Current Bitcoin price in USD |
+| **ETH Price** | Current Ethereum price in USD |
+| **Market Cap** | Total value of all crypto assets combined |
+| **24h Volume** | Total trading volume across crypto markets in the last 24 hours |
+
+### Crypto vs Stocks
+
+| | Stocks | Crypto |
+|---|---|---|
+| **Trading hours** | Market hours (HOSE: 9:00–14:30 GMT+7) | 24 hours / 7 days |
+| **Volatility** | Generally lower | Generally higher |
+| **Signal frequency** | Tied to market sessions | Continuous |
+
+> **For beginners new to crypto:** Because crypto markets never close, signals can appear at any time. It is worth checking the Signals page at different times of day, especially during high-volume periods like US and Asian market overlaps.
+
+---
+
+## Switching Between Markets
+
+If you are subscribed to both Stocks and Crypto, you can switch between them using the **Market Toggle** in the top navigation bar. All pages — Dashboard, Signals, Positions, Analysis, Portfolio — update to show data for the selected market.
+
+---
 
 ## Coming Soon
 
-We're continuously expanding coverage based on user demand:
+We are continuously expanding coverage. Markets and assets being evaluated include:
 
-- **European equities** — Planned Q2 2025
-- **Commodities** — Under evaluation
-- **More forex pairs** — On request for Pro plans
+- More Vietnamese and regional stocks
+- Additional crypto assets based on user demand
 
-## Institutional Custom Coverage
-
-Institutional plans can request custom asset coverage. Contact our sales team to discuss your requirements.
+If you would like to request a specific asset or market, contact support from inside the app.

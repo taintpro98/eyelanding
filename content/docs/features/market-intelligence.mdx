@@ -1,44 +1,115 @@
 ---
-title: Real-time Market Intelligence
-description: Live market data and institutional activity
+title: Market & Analysis
+description: Understand the market at a glance and analyse any asset in depth
 ---
 
-# Real-time Market Intelligence
+# Market & Analysis
 
-ALumiEye aggregates data from multiple sources to deliver a comprehensive view of market activity.
+ALumiEye gives you two complementary tools for understanding what the market is doing: the **Market page** for a broad view, and the **Analysis page** for a deep dive into a specific asset.
 
-## Data Sources
+---
 
-Our platform ingests data from:
+## Market Page
 
-- **Exchanges** — Direct and consolidated tape data
-- **Dark Pools** — Off-exchange activity
-- **Alternative Data** — Order flow, options flow, and sentiment signals
+The Market page answers the question: **"Which assets are moving, and in which direction?"**
 
-## Features
+### Top Movers
 
-### Live Order Flow
+A table of the most active assets in your current market, sorted by the size of their price change. For each asset you can see:
 
-See real-time buy and sell pressure as it happens. Understand where large orders are being placed and how they impact price action.
+| Column | Meaning |
+|---|---|
+| **Symbol** | Asset ticker |
+| **Name** | Full asset name |
+| **Price** | Current price |
+| **24h Change** | Percentage change over the last 24 hours (green = up, red = down) |
 
-### Volume Profile
+> **How to use it:** The top movers table is a quick scanner. If you see a symbol you follow shooting up or down significantly, go to the Analysis page to understand whether the move is backed by a trend or just noise.
 
-Identify key price levels based on volume distribution. Our volume-at-price analysis helps you spot support and resistance zones before they're obvious.
+### Market Sentiment
 
-### Institutional Activity
+Below the top movers, you will find the overall market sentiment — a measure of whether buyers or sellers are in control.
 
-Detect when institutions are accumulating or distributing. Our algorithms flag unusual block trades and dark pool activity.
+| Sentiment | What it means |
+|---|---|
+| **Bullish** | More buyers than sellers — the market is generally rising |
+| **Neutral** | Balanced — no clear direction |
+| **Bearish** | More sellers than buyers — the market is generally falling |
 
-### Multi-Asset Coverage
+The sentiment is shown as three percentages that add up to 100%. For example: **60% Bullish / 25% Neutral / 15% Bearish** means the market is leaning heavily bullish.
 
-Currently supported:
+> **For beginners:** In a bullish market, buy signals carry more weight. In a bearish market, sell signals are more reliable. Always check the sentiment before acting on a signal.
 
-- US equities (NYSE, NASDAQ)
-- Major forex pairs (EUR/USD, GBP/USD, USD/JPY, etc.)
-- Popular cryptocurrencies (BTC, ETH, and major altcoins)
+---
 
-## Best Practices
+## Analysis Page
 
-1. **Set up alerts** — Get notified when unusual activity occurs in your watchlist
-2. **Review pre-market** — Check overnight flow before the session opens
-3. **Correlate with signals** — Combine market intelligence with AI signals for higher conviction
+The Analysis page answers: **"Is this specific asset in a good position to trade right now?"**
+
+### Searching for a Symbol
+
+1. Type the asset ticker in the search box (e.g. `VNM`, `BTC`, `ETH`)
+2. Click **Search** or press Enter
+3. The page populates with everything ALumiEye knows about that asset
+
+The URL updates to include the symbol so you can bookmark any analysis.
+
+---
+
+### Overall Trend Rating
+
+At the top of the analysis, you get a single letter grade for the asset's current trend:
+
+| Rating | Meaning |
+|---|---|
+| **A** | Very strong bullish trend — conditions are highly favourable for buys |
+| **B+** | Good bullish trend — generally safe to lean long |
+| **B** | Mild bullish trend — more caution needed |
+| **C** | Neutral or mixed — no clear edge |
+| **D** | Mild bearish trend — lean short or avoid longs |
+| **F** | Strong bearish trend — conditions favour sellers |
+
+> **Beginner tip:** Look for assets rated **B+ or A** when considering a buy trade. Avoid entering a new buy on an asset rated **D or F**.
+
+---
+
+### Mid-Term Trend
+
+The mid-term trend reflects the asset's behaviour over the past several weeks — the "big picture."
+
+Each trend card shows three values:
+
+| Value | What it means |
+|---|---|
+| **Trend direction** | Up (↑), Down (↓), or Sideways (→) |
+| **Signal** | Bullish, Bearish, or Neutral |
+| **Strength** | Strong, Moderate, or Weak |
+
+**Example:** Mid-term → Up / Bullish / Strong means the asset has been rising consistently with good momentum.
+
+### Short-Term Trend
+
+The short-term trend reflects the last few days of price behaviour. It uses the same three values.
+
+**How to use both together:**
+
+| Mid-term | Short-term | What to think |
+|---|---|---|
+| Bullish | Bullish | Strong alignment — high-confidence buy setup |
+| Bullish | Bearish | Pullback in an uptrend — could be a buy dip or a reversal warning |
+| Bearish | Bearish | Strong alignment — high-confidence sell setup |
+| Bearish | Bullish | Bounce in a downtrend — treat with caution |
+
+---
+
+### Recent Signals for This Symbol
+
+Below the trend cards, you see the last 4 signals for this asset (with pagination). This lets you see the pattern of recent AI activity — for example, whether Open signals have been followed by Increase signals, confirming momentum.
+
+---
+
+### Active Positions for This Symbol
+
+At the bottom, any open positions for this asset are listed. Useful for checking whether a signal aligns with a trade you already have open.
+
+> Active positions on the Analysis page are available on **Pro and Premium** plans.

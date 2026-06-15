@@ -5,58 +5,143 @@ description: Frequently asked questions about ALumiEye
 
 # Frequently Asked Questions
 
-## General
+---
+
+## Getting Started
 
 ### What is ALumiEye?
 
-ALumiEye is an AI-powered trading intelligence platform that helps traders detect alpha opportunities, track institutional money flow, and analyze markets with advanced machine learning. We combine real-time market data with proprietary AI models to surface high-probability trading signals.
+ALumiEye is a trading intelligence platform for Vietnamese stock and crypto traders. It provides real-time AI-generated signals, live position tracking, market analysis, and portfolio visualisation — all in one app.
 
-### What makes ALumiEye different?
+### Who is ALumiEye designed for?
 
-We focus on three pillars: real-time market intelligence, smart money tracking, and AI-powered signals. Our platform is designed for serious traders who want an edge—not just another charting tool.
+ALumiEye is built for traders at every level:
 
-### Is there a mobile app?
+- **Beginners** — The Dashboard and Signals page give you a clear starting point without requiring deep market knowledge
+- **Active traders** — Signal filtering, live positions, and per-symbol analysis help you manage a busy trading day
+- **Experienced traders** — Trend ratings, short/mid-term breakdowns, portfolio allocation, and API access give you the depth you need
 
-Our web app is fully responsive and works on mobile browsers. A native mobile app is planned for future release.
+### Do I need trading experience to use ALumiEye?
 
-## AI & Signals
+No. The platform is designed to be understandable even if you are new to trading. The Getting Started guide walks you through everything step by step. That said, ALumiEye provides intelligence — not financial advice. You are still responsible for your own trading decisions.
 
-### How does the AI generate signals?
+### Is there a mobile version?
 
-Our AI models analyze multiple data dimensions including order flow, price action, volume profiles, and alternative data sources. We use ensemble machine learning techniques trained on historical market data to identify patterns that precede significant price movements. Each signal includes a confidence score and risk metrics.
+Yes. The web app is fully responsive and works well on mobile browsers. Open it in Chrome or Safari on your phone and it adapts automatically to your screen size.
 
-### How accurate are the signals?
+---
 
-Signal accuracy varies by market conditions and asset class. Our Pro plan signals have historically shown higher accuracy due to access to additional data and advanced models. Past performance does not guarantee future results.
+## Signals
 
-### Can I use signals for automated trading?
+### What is a trading signal?
 
-API access is available on Institutional plans. Contact sales for programmatic access.
+A signal is a notification that the AI has detected conditions that have historically preceded a price move. It shows you the asset, whether to consider buying or selling, the signal strength, and the price at the time of detection.
 
-## Pricing & Plans
+A signal is **not** a guaranteed trade outcome. It is a data-driven suggestion that you should evaluate alongside your own view.
 
-### Is there a free plan?
+### What does signal strength (Quantity) mean?
 
-Yes! Our Starter plan is free forever and includes basic AI signals, a 5-asset watchlist, daily market briefs, and email support. It's a great way to explore the platform before upgrading to Pro.
+Signal strength is expressed as a percentage. Higher is stronger:
 
-### What's included in the Pro trial?
+- **20%+** — Very strong conviction
+- **10–20%** — Strong
+- **2–10%** — Moderate
+- **Below 2%** — Weak
 
-Pro includes a 14-day free trial with full access to all Pro features. No credit card required to start.
+For beginners, focus on signals at 10% or above.
 
-### Can I cancel anytime?
+### What do the signal types mean?
 
-Yes. All plans are month-to-month. Cancel before your renewal date to avoid charges.
+| Type | Meaning |
+|---|---|
+| **Open** | A new opportunity has been detected — the AI is flagging this asset for the first time |
+| **Increase** | An existing signal is getting stronger — momentum is building |
+| **Decrease** | The signal is weakening — momentum is fading |
+| **Close** | The opportunity appears to be ending — consider exiting |
+
+### How often do signals appear?
+
+It depends on market conditions and the asset. In active market sessions, several signals may appear per hour. During quiet periods, fewer signals are generated. The AI only fires a signal when conditions are genuinely met — it does not generate signals for the sake of it.
+
+### Can I filter signals?
+
+Yes, on **Pro and Premium** plans you can filter by symbol, side (buy/sell), and signal type. Free plan users can view signals but cannot filter them.
+
+---
+
+## Positions
+
+### What is the difference between P&L and Position Return?
+
+- **Current P&L** — Your profit or loss from your average entry price to the current price, as a percentage
+- **Position Return** — The total return across the full planned position size, accounting for how much of the position has been filled (capacity)
+
+### What does "Capacity" mean?
+
+Capacity shows how much of the intended position size has been filled. A capacity of 50% means only half the planned trade has been executed so far — for example, the system is accumulating gradually.
+
+### Why is "Distance to Stop" important?
+
+Distance to stop shows how far the current price is from your stop loss level. A small distance (e.g. 2%) means you are close to being stopped out — you should pay close attention. A large distance (e.g. 15%) means you have more room.
+
+### Why doesn't the price update automatically?
+
+To keep the app fast and avoid unnecessary server load, live price data is loaded on demand. Click the **Refresh** icon on any position row to get the latest price, P&L, and return for that trade.
+
+---
+
+## Markets
+
+### Which markets does ALumiEye cover?
+
+- **Vietnamese stocks** — VN Index, VN30, HOSE-listed companies
+- **Cryptocurrency** — BTCUSDT, ETHUSDT, BNBUSDT, SOLUSDT, XRPUSDT, and more
+
+### What plan do I need for crypto?
+
+Crypto market access requires a **Pro or Premium** plan.
+
+### Can I use both markets at the same time?
+
+Yes, if you are subscribed to both. Use the Market Toggle in the top navigation bar to switch between Stocks and Crypto. All pages update to show data for the selected market.
+
+---
+
+## Plans & Billing
+
+### What does the Free plan include?
+
+The Free plan gives you the Dashboard, Market overview, and a basic view of trading signals — no credit card required. Signal filtering, positions, analysis, watchlist, and portfolio require Pro or Premium.
+
+### How do I upgrade my plan?
+
+Go to **Billing** in the top-right account menu. Click **Upgrade** on the market you want to upgrade, select your plan, and complete the payment.
+
+### Can I downgrade or cancel?
+
+Yes. You can change your plan at any time from the Billing page. Changes take effect at the start of your next billing cycle.
+
+### What happens when my subscription expires?
+
+Your account reverts to the Free plan. You will still be able to view the Dashboard and Market page, but locked features will show an upgrade prompt.
+
+---
 
 ## Technical
 
-### Which markets are supported?
+### Is my account secure?
 
-We currently support US equities, major forex pairs, and popular cryptocurrencies. See [Supported Markets](/docs/supported-markets) for full details.
+Yes. All data is encrypted in transit (HTTPS) and at rest. Your password is hashed and never stored in plain text.
 
-### Is my data secure?
+### I verified my email but cannot log in. What should I do?
 
-Yes. We use bank-level encryption for all data in transit and at rest. We never store your trading credentials—we use read-only API connections where applicable.
+Make sure you are using the same email address you registered with. If you have forgotten your password, use the password reset option on the Sign In page. If the issue persists, contact support from the Settings page.
 
-### Do you offer an API?
+### The app is slow or not loading. What should I try?
 
-API access is available on Institutional plans. Contact sales for details.
+1. Hard-refresh the page (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac)
+2. Clear your browser cache
+3. Try a different browser
+4. Check your internet connection
+
+If the issue continues, contact support.

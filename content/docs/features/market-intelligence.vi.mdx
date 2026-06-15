@@ -1,16 +1,115 @@
 ---
-title: Thông tin thị trường thời gian thực
-description: Dữ liệu và cảnh báo thị trường trực tiếp
+title: Thị Trường & Phân Tích
+description: Hiểu thị trường tổng quan và phân tích sâu bất kỳ tài sản nào
 ---
 
-# Thông tin thị trường thời gian thực
+# Thị Trường & Phân Tích
 
-Theo dõi dữ liệu thị trường trực tiếp, dòng lệnh và hoạt động tổ chức trên nhiều loại tài sản.
+ALumiEye cung cấp hai công cụ bổ sung để hiểu thị trường đang làm gì: trang **Thị trường** cho cái nhìn tổng quan, và trang **Phân tích** để đi sâu vào một tài sản cụ thể.
 
-## Nguồn dữ liệu
+---
 
-Hệ thống tổng hợp từ sàn giao dịch, dark pool và nguồn dữ liệu thay thế để bạn có cái nhìn đầy đủ về thanh khoản và áp lực mua bán.
+## Trang Thị Trường
 
-## Cảnh báo
+Trang Thị trường trả lời câu hỏi: **"Tài sản nào đang biến động, và theo hướng nào?"**
 
-Thiết lập cảnh báo theo điều kiện giá, khối lượng và sự kiện thị trường (tùy gói).
+### Mã Tăng/Giảm Mạnh
+
+Bảng các tài sản hoạt động mạnh nhất trong thị trường hiện tại của bạn, sắp xếp theo mức độ biến động giá. Với mỗi tài sản bạn có thể xem:
+
+| Cột | Ý nghĩa |
+|---|---|
+| **Mã** | Ticker tài sản |
+| **Tên** | Tên đầy đủ của tài sản |
+| **Giá** | Giá hiện tại |
+| **Thay đổi 24h** | Phần trăm thay đổi trong 24 giờ qua (xanh = tăng, đỏ = giảm) |
+
+> **Cách dùng:** Bảng này là công cụ quét nhanh. Nếu bạn thấy một mã bạn theo dõi tăng hoặc giảm mạnh, hãy vào trang Phân tích để hiểu liệu biến động đó có được hỗ trợ bởi xu hướng hay chỉ là nhiễu.
+
+### Tâm Lý Thị Trường
+
+Bên dưới bảng mã tăng/giảm, bạn sẽ thấy tâm lý thị trường tổng thể — đo lường xem người mua hay người bán đang chiếm ưu thế.
+
+| Tâm lý | Ý nghĩa |
+|---|---|
+| **Tăng (Bullish)** | Nhiều người mua hơn người bán — thị trường đang tăng nói chung |
+| **Trung tính (Neutral)** | Cân bằng — không có hướng rõ ràng |
+| **Giảm (Bearish)** | Nhiều người bán hơn người mua — thị trường đang giảm nói chung |
+
+Tâm lý được hiển thị dưới dạng ba phần trăm cộng lại bằng 100%. Ví dụ: **60% Tăng / 25% Trung tính / 15% Giảm** nghĩa là thị trường đang nghiêng mạnh về xu hướng tăng.
+
+> **Dành cho người mới:** Trong thị trường tăng, tín hiệu mua có trọng lượng hơn. Trong thị trường giảm, tín hiệu bán đáng tin cậy hơn. Luôn kiểm tra tâm lý trước khi hành động theo tín hiệu.
+
+---
+
+## Trang Phân Tích
+
+Trang Phân tích trả lời: **"Tài sản cụ thể này có đang ở vị trí tốt để giao dịch không?"**
+
+### Tìm Kiếm Mã
+
+1. Nhập ticker tài sản vào ô tìm kiếm (ví dụ: `VNM`, `BTC`, `ETH`)
+2. Nhấn **Tìm kiếm** hoặc Enter
+3. Trang hiển thị đầy đủ thông tin ALumiEye biết về tài sản đó
+
+URL cập nhật để bao gồm mã, giúp bạn lưu bookmark hoặc chia sẻ bất kỳ phân tích nào.
+
+---
+
+### Xếp Hạng Xu Hướng Tổng Thể
+
+Ở đầu trang phân tích, bạn nhận được một chữ cái đánh giá xu hướng hiện tại của tài sản:
+
+| Xếp hạng | Ý nghĩa |
+|---|---|
+| **A** | Xu hướng tăng rất mạnh — điều kiện rất thuận lợi cho mua |
+| **B+** | Xu hướng tăng tốt — nhìn chung an toàn để thiên về mua |
+| **B** | Xu hướng tăng nhẹ — cần thận trọng hơn |
+| **C** | Trung tính hoặc hỗn hợp — không có lợi thế rõ ràng |
+| **D** | Xu hướng giảm nhẹ — thiên về bán hoặc tránh mua mới |
+| **F** | Xu hướng giảm mạnh — điều kiện thuận lợi cho người bán |
+
+> **Mẹo cho người mới:** Tìm tài sản được xếp hạng **B+ hoặc A** khi xem xét giao dịch mua. Tránh mở lệnh mua mới với tài sản xếp hạng **D hoặc F**.
+
+---
+
+### Xu Hướng Trung Hạn
+
+Xu hướng trung hạn phản ánh hành vi của tài sản trong vài tuần qua — bức tranh "toàn cảnh."
+
+Mỗi thẻ xu hướng hiển thị ba giá trị:
+
+| Giá trị | Ý nghĩa |
+|---|---|
+| **Hướng xu hướng** | Tăng (↑), Giảm (↓), hoặc Đi ngang (→) |
+| **Tín hiệu** | Tăng, Giảm, hoặc Trung tính |
+| **Sức mạnh** | Mạnh, Trung bình, hoặc Yếu |
+
+**Ví dụ:** Trung hạn → Tăng / Tăng / Mạnh nghĩa là tài sản đang tăng đều với đà tốt.
+
+### Xu Hướng Ngắn Hạn
+
+Xu hướng ngắn hạn phản ánh những gì tài sản đã làm trong vài ngày qua. Dùng cùng ba giá trị như trung hạn.
+
+**Cách kết hợp cả hai:**
+
+| Trung hạn | Ngắn hạn | Nên nghĩ gì |
+|---|---|---|
+| Tăng | Tăng | Nhất quán mạnh — setup mua độ tin cậy cao |
+| Tăng | Giảm | Điều chỉnh trong uptrend — có thể là cơ hội mua dip hoặc cảnh báo đảo chiều |
+| Giảm | Giảm | Nhất quán mạnh — setup bán độ tin cậy cao |
+| Giảm | Tăng | Bật lại trong downtrend — hãy thận trọng |
+
+---
+
+### Tín Hiệu Gần Đây Cho Mã Này
+
+Bên dưới các thẻ xu hướng, bạn thấy 4 tín hiệu gần nhất cho tài sản này (có phân trang). Giúp bạn thấy mẫu hoạt động AI gần đây — ví dụ, liệu tín hiệu Mở có được theo sau bởi tín hiệu Tăng không, xác nhận đà.
+
+---
+
+### Vị Thế Đang Mở Cho Mã Này
+
+Ở cuối trang, các vị thế đang mở cho tài sản này được liệt kê. Hữu ích để kiểm tra xem tín hiệu có phù hợp với giao dịch bạn đang có không.
+
+> Vị thế đang mở trên trang Phân tích dành cho người dùng **Pro và Premium**.
