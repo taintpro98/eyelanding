@@ -20,6 +20,19 @@ export function landingHashHref(lang: string, hash: string): string {
 }
 
 /**
+ * Single source of truth for the primary CTA destination ("Start Free").
+ *
+ * Set `NEXT_PUBLIC_SIGNUP_URL` to point every CTA at a real waitlist or
+ * signup page (e.g. a Tally form, your app's `/signup`, etc.) without
+ * touching component code. Falls back to the in-page `#cta` anchor.
+ */
+export function signupUrl(lang: string): string {
+  const external = process.env.NEXT_PUBLIC_SIGNUP_URL;
+  if (external && external.length > 0) return external;
+  return landingHashHref(lang, "#cta");
+}
+
+/**
  * Path without locale prefix (`/` and `/docs/...` for default language;
  * `/vi` → `/`, `/vi/docs` → `/docs`).
  */

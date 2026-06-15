@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
@@ -7,6 +8,7 @@ import { Pricing } from "@/components/pricing";
 import { FAQ } from "@/components/faq";
 import { CTA } from "@/components/cta";
 import { Footer } from "@/components/footer";
+import { ForceDarkTheme } from "@/components/force-dark-theme";
 import { getLandingCopy } from "@/lib/landing-i18n";
 
 export async function generateMetadata({
@@ -37,9 +39,42 @@ export async function generateMetadata({
   };
 }
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  const t = getLandingCopy(lang);
+
+  // FAQPage JSON-LD for richer search results.
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <div className="dark relative min-h-screen min-w-0 overflow-x-clip font-sans">
+      {/* Pin <html> to dark while on the landing page so docs theme toggling
+          can't bleed in (background, muted text, etc. read from <html>). */}
+      <ForceDarkTheme />
+
+      {/* Skip link — visible on keyboard focus, hidden otherwise. */}
+      <a
+        href="#hero-heading"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 focus:ring-offset-background"
+      >
+        Skip to content
+      </a>
+
       {/* Fancy background - base + effects (no solid layer on top) */}
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[#030306]">
         {/* Aurora-style orbs — depth + color variety */}
@@ -62,16 +97,21 @@ export default function Home() {
         {/* Film grain */}
         <div className="absolute inset-0 bg-noise opacity-[0.22] mix-blend-overlay" aria-hidden />
       </div>
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <ProductPreview />
-        <Pricing />
-        <FAQ />
-        <CTA />
-        <Footer />
+      <Navbar lang={lang} />
+      <main id="main-content">
+        <Hero lang={lang} />
+        <Features lang={lang} />
+        <ProductPreview lang={lang} />
+        <Pricing lang={lang} />
+        <FAQ lang={lang} />
+        <CTA lang={lang} />
+        <Footer lang={lang} />
       </main>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </div>
   );
 }

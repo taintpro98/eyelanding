@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Activity,
   TrendingUp,
@@ -9,12 +7,12 @@ import {
   Shield,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { useLandingCopy } from "@/hooks/use-landing-copy";
+import { getLandingCopy } from "@/lib/landing-i18n";
 
 const icons = [Activity, TrendingUp, Sparkles, BarChart3, LineChart, Shield];
 
-export function Features() {
-  const t = useLandingCopy();
+export function Features({ lang }: { lang: string }) {
+  const t = getLandingCopy(lang);
 
   return (
     <section
@@ -43,10 +41,10 @@ export function Features() {
             return (
               <Card
                 key={feature.title}
-                className="group border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-transparent shadow-[0_24px_48px_-32px_rgba(0,0,0,0.8)] ring-1 ring-white/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_32px_64px_-28px_rgba(52,211,153,0.12)]"
+                className="group border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-transparent shadow-[0_24px_48px_-32px_rgba(0,0,0,0.8)] ring-1 ring-white/[0.04] transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-[0_32px_64px_-28px_rgba(52,211,153,0.12)] motion-reduce:transition-none motion-reduce:hover:translate-y-0"
               >
                 <CardHeader>
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-primary/5 text-primary shadow-inner shadow-primary/10 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-105">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-primary/5 text-primary shadow-inner shadow-primary/10 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100">
                     <Icon className="h-5 w-5" aria-hidden />
                   </div>
                   <h3 className="text-lg font-semibold tracking-tight text-foreground">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+
 import { Languages } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { withLocalePath } from "@/lib/locale-path";
@@ -20,13 +20,8 @@ export function LanguageSwitcher({ className, variant = "compact" }: Props) {
   const lang = useLocaleLang();
   const t = useLandingCopy();
 
-  const { enHref, viHref } = useMemo(() => {
-    const hash =
-      typeof window !== "undefined" ? window.location.hash ?? "" : "";
-    const en = `${withLocalePath(pathname, "en")}${hash}`;
-    const vi = `${withLocalePath(pathname, "vi")}${hash}`;
-    return { enHref: en, viHref: vi };
-  }, [pathname]);
+  const enHref = withLocalePath(pathname, "en");
+  const viHref = withLocalePath(pathname, "vi");
 
   if (variant === "inline") {
     return (

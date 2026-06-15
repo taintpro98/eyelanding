@@ -1,13 +1,40 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void): () => void {
+  if (typeof window === "undefined" || !window.matchMedia) {
+    return () => {};
+  }
+  const mq = window.matchMedia(REDUCED_MOTION_QUERY);
+  mq.addEventListener?.("change", onChange);
+  return () => mq.removeEventListener?.("change", onChange);
+}
+
+function getReducedMotion(): boolean {
+  if (typeof window === "undefined" || !window.matchMedia) return false;
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+/** SSR-safe subscription to `prefers-reduced-motion`. */
+function useReducedMotion(): boolean {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    () => false,
+  );
+}
+
 function WireframeSphere() {
   const meshRef = useRef<THREE.Mesh>(null);
+  const reduced = useReducedMotion();
 
   useFrame((_, delta) => {
+    if (reduced) return;
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * 0.2;
     }
@@ -28,12 +55,13 @@ function WireframeSphere() {
 
 function WireframeRings() {
   const ringsRef = useRef<THREE.Group>(null);
+  const reduced = useReducedMotion();
 
   useFrame((_, delta) => {
-    if (ringsRef.current) {
-      ringsRef.current.rotation.x = Math.PI * 0.3;
-      ringsRef.current.rotation.y += delta * 0.15;
-    }
+    if (!ringsRef.current) return;
+    ringsRef.current.rotation.x = Math.PI * 0.3;
+    if (reduced) return;
+    ringsRef.current.rotation.y += delta * 0.15;
   });
 
   return (

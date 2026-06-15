@@ -1,15 +1,13 @@
-"use client";
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useLandingCopy } from "@/hooks/use-landing-copy";
+import { getLandingCopy } from "@/lib/landing-i18n";
 
-export function FAQ() {
-  const t = useLandingCopy();
+export function FAQ({ lang }: { lang: string }) {
+  const t = getLandingCopy(lang);
   const faqs = t.faq.items;
 
   return (

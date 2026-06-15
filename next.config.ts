@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import { createMDX } from "fumadocs-mdx/next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverExternalPackages: ["three", "@react-three/fiber", "@react-three/drei"],
 };
 
 const withMDX = createMDX({ configPath: "fumadocs.config.ts" });

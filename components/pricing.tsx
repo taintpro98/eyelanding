@@ -1,16 +1,12 @@
-"use client";
-
 import { Check } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { landingHashHref } from "@/lib/locale-path";
-import { useLocaleLang } from "@/hooks/use-locale-lang";
-import { useLandingCopy } from "@/hooks/use-landing-copy";
+import { signupUrl } from "@/lib/locale-path";
+import { getLandingCopy } from "@/lib/landing-i18n";
 
-export function Pricing() {
-  const lang = useLocaleLang();
-  const t = useLandingCopy();
-  const ctaHref = landingHashHref(lang, "#cta");
+export function Pricing({ lang }: { lang: string }) {
+  const t = getLandingCopy(lang);
+  const ctaHref = signupUrl(lang);
   const plans = t.pricing.plans;
 
   return (
@@ -34,23 +30,24 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:mt-16 sm:gap-6 lg:grid-cols-3 lg:gap-5">
+        <div className="mt-12 grid gap-5 pt-4 sm:mt-16 sm:gap-6 lg:grid-cols-3 lg:gap-5">
           {plans.map((plan) => (
             <Card
               key={plan.name}
               className={cn(
-                "flex flex-col rounded-2xl border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent transition-all duration-300",
+                "relative flex flex-col rounded-2xl border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent transition-colors duration-300",
                 plan.highlighted
-                  ? "border-primary/40 bg-gradient-to-b from-primary/[0.12] to-primary/[0.02] shadow-[0_32px_64px_-32px_rgba(52,211,153,0.35)] ring-2 ring-primary/30 lg:scale-[1.02] lg:z-10"
-                  : "hover:border-white/15 hover:shadow-[0_24px_48px_-40px_rgba(0,0,0,0.5)]"
+                  ? "overflow-visible border-primary/40 bg-gradient-to-b from-primary/[0.12] to-primary/[0.02] shadow-[0_32px_64px_-32px_rgba(52,211,153,0.35)] ring-2 ring-primary/30 lg:scale-[1.02] lg:z-10"
+                  : "hover:border-white/15"
               )}
+              aria-label={`${plan.name} plan: ${plan.price}${plan.period}`}
             >
+              {plan.highlighted && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-primary/30 bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground shadow-[0_8px_24px_-8px_rgba(52,211,153,0.6)]">
+                  {t.pricing.mostPopular}
+                </span>
+              )}
               <CardHeader>
-                {plan.highlighted && (
-                  <span className="mb-3 inline-block w-fit rounded-full border border-primary/30 bg-primary/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-                    {t.pricing.mostPopular}
-                  </span>
-                )}
                 <h3 className="text-xl font-semibold text-foreground">
                   {plan.name}
                 </h3>
@@ -80,9 +77,9 @@ export function Pricing() {
                 <a
                   href={ctaHref}
                   className={cn(
-                    "flex h-11 w-full items-center justify-center rounded-xl border px-4 text-base font-semibold transition-all duration-200",
+                    "flex h-11 w-full items-center justify-center rounded-xl border px-4 text-base font-semibold outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none",
                     plan.highlighted
-                      ? "border-transparent bg-primary text-primary-foreground shadow-[0_8px_24px_-8px_rgba(52,211,153,0.5)] hover:bg-primary/92 hover:scale-[1.01] active:scale-[0.99]"
+                      ? "border-transparent bg-primary text-primary-foreground hover:bg-primary/92 active:scale-[0.99] motion-reduce:active:scale-100"
                       : "border-white/[0.12] bg-white/[0.04] hover:border-white/20 hover:bg-white/[0.08]"
                   )}
                 >

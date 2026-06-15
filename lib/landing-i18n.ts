@@ -86,6 +86,7 @@ export type LandingCopy = {
       terms: string;
     };
     copyright: (year: number) => string;
+    disclaimer: string;
   };
 };
 
@@ -113,9 +114,9 @@ const en: LandingCopy = {
       "Detect alpha. Track smart money. Trade with confidence.",
     startFree: "Start Free",
     viewDemo: "View Demo",
-    trustLineMobile: "No credit card · Real-time signals · Active traders",
+    trustLineMobile: "Real-time signals — Active traders",
     trustLineDesktop:
-      "No credit card · Real-time signals · Built for active traders",
+      "Real-time signals — Built for active traders",
   },
   features: {
     eyebrow: "Capabilities",
@@ -124,34 +125,34 @@ const en: LandingCopy = {
       "Powerful tools designed for serious traders who demand an edge.",
     items: [
       {
-        title: "Real-time Market Intelligence",
+        title: "Trading Signals",
         description:
-          "Stay ahead with live market data, order flow, and institutional activity across multiple asset classes.",
+          "Receive real-time buy and sell signals with strength indicators and price levels across stocks and crypto.",
       },
       {
-        title: "Smart Money Tracking",
+        title: "Position Tracking",
         description:
-          "Follow the flow of institutional capital and identify where the smart money is moving before the crowd.",
+          "Monitor all active and closed positions with live P&L, stop loss distance, capacity, and order history.",
       },
       {
-        title: "AI Signal Detection",
+        title: "Market Overview",
         description:
-          "Machine learning models analyze patterns and generate actionable trading signals with quantified confidence.",
+          "See top movers, price changes, and market sentiment — bullish, neutral, or bearish — at a glance.",
       },
       {
-        title: "Portfolio Analytics",
+        title: "Asset Analysis",
         description:
-          "Comprehensive portfolio insights, risk metrics, and performance attribution to optimize your strategy.",
+          "Get per-symbol trend ratings from A to F with short-term and mid-term signal direction and strength.",
       },
       {
-        title: "Advanced Charting",
+        title: "Portfolio Visualization",
         description:
-          "Professional-grade charts with custom indicators, drawing tools, and seamless multi-timeframe analysis.",
+          "Understand your allocation through interactive charts showing holdings, weights, and live returns.",
       },
       {
-        title: "Risk Insights",
+        title: "Watchlist",
         description:
-          "Real-time risk exposure, position sizing recommendations, and scenario analysis to protect your capital.",
+          "Track your favourite assets with latest prices and instant access to their signals and open positions.",
       },
     ],
   },
@@ -193,7 +194,7 @@ const en: LandingCopy = {
     mostPopular: "Most popular",
     plans: [
       {
-        name: "Starter",
+        name: "Free",
         description: "For individual traders getting started",
         price: "Free",
         period: "forever",
@@ -222,7 +223,7 @@ const en: LandingCopy = {
         highlighted: true,
       },
       {
-        name: "Institutional",
+        name: "Premium",
         description: "For funds and professional teams",
         price: "Custom",
         period: "",
@@ -261,7 +262,7 @@ const en: LandingCopy = {
       {
         question: "Is there a free plan?",
         answer:
-          "Yes! Our Starter plan is free forever and includes basic AI signals, a 5-asset watchlist, daily market briefs, and email support. It's a great way to explore the platform before upgrading to Pro for advanced features.",
+          "Yes! Our Free plan is free forever and includes basic AI signals, a 5-asset watchlist, daily market briefs, and email support. It's a great way to explore the platform before upgrading to Pro for advanced features.",
       },
     ],
   },
@@ -291,6 +292,8 @@ const en: LandingCopy = {
     },
     copyright: (year) =>
       `© ${year} ALumiEye. All rights reserved.`,
+    disclaimer:
+      "ALumiEye provides market intelligence and analytics, not financial advice. Trading involves substantial risk of loss; past performance is not indicative of future results.",
   },
 };
 
@@ -319,9 +322,9 @@ const vi: LandingCopy = {
     startFree: "Bắt đầu miễn phí",
     viewDemo: "Xem demo",
     trustLineMobile:
-      "Không cần thẻ · Tín hiệu thời gian thực · Cho trader tích cực",
+      "Tín hiệu thời gian thực — Cho trader tích cực",
     trustLineDesktop:
-      "Không cần thẻ · Tín hiệu thời gian thực · Dành cho trader chuyên nghiệp",
+      "Tín hiệu thời gian thực — Dành cho trader chuyên nghiệp",
   },
   features: {
     eyebrow: "Khả năng",
@@ -330,34 +333,34 @@ const vi: LandingCopy = {
       "Bộ công cụ mạnh mẽ dành cho trader nghiêm túc luôn tìm kiếm lợi thế.",
     items: [
       {
-        title: "Thông tin thị trường thời gian thực",
+        title: "Tín hiệu giao dịch",
         description:
-          "Luôn đi trước với dữ liệu trực tiếp, dòng lệnh và hoạt động tổ chức trên nhiều loại tài sản.",
+          "Nhận tín hiệu mua/bán thời gian thực kèm chỉ số sức mạnh và mức giá trên cổ phiếu và crypto.",
       },
       {
-        title: "Theo dõi dòng tiền thông minh",
+        title: "Theo dõi vị thế",
         description:
-          "Theo dõi dòng vốn tổ chức và xác định nơi “smart money” di chuyển trước đám đông.",
+          "Giám sát tất cả vị thế đang mở và đã đóng với P&L trực tiếp, khoảng cách stop loss, công suất và lịch sử lệnh.",
       },
       {
-        title: "Phát hiện tín hiệu AI",
+        title: "Tổng quan thị trường",
         description:
-          "Mô hình học máy phân tích mẫu hình và tạo tín hiệu giao dịch khả thi kèm độ tin cậy.",
+          "Xem các mã tăng/giảm mạnh nhất, biến động giá và tâm lý thị trường — tăng, trung tính hay giảm — ngay lập tức.",
       },
       {
-        title: "Phân tích danh mục",
+        title: "Phân tích tài sản",
         description:
-          "Thông tin danh mục toàn diện, chỉ số rủi ro và phân bổ hiệu suất để tối ưu chiến lược.",
+          "Nhận xếp hạng xu hướng từ A đến F theo từng mã, kèm hướng tín hiệu và sức mạnh ngắn hạn và trung hạn.",
       },
       {
-        title: "Biểu đồ nâng cao",
+        title: "Trực quan danh mục",
         description:
-          "Biểu đồ chuyên nghiệp với chỉ báo tùy chỉnh, công cụ vẽ và phân tích đa khung thời gian.",
+          "Hiểu rõ phân bổ tài sản qua biểu đồ tương tác thể hiện tỷ trọng nắm giữ và lợi nhuận trực tiếp.",
       },
       {
-        title: "Thông tin rủi ro",
+        title: "Danh sách theo dõi",
         description:
-          "Mức độ rủi ro thời gian thực, gợi ý khối lượng và phân tích kịch bản để bảo vệ vốn.",
+          "Theo dõi các tài sản yêu thích với giá mới nhất và truy cập nhanh tín hiệu và vị thế đang mở.",
       },
     ],
   },
@@ -399,7 +402,7 @@ const vi: LandingCopy = {
     mostPopular: "Phổ biến nhất",
     plans: [
       {
-        name: "Starter",
+        name: "Free",
         description: "Dành cho trader cá nhân mới bắt đầu",
         price: "Miễn phí",
         period: "mãi mãi",
@@ -428,7 +431,7 @@ const vi: LandingCopy = {
         highlighted: true,
       },
       {
-        name: "Institutional",
+        name: "Premium",
         description: "Dành cho quỹ và đội ngũ chuyên nghiệp",
         price: "Tùy chỉnh",
         period: "",
@@ -467,7 +470,7 @@ const vi: LandingCopy = {
       {
         question: "Có gói miễn phí không?",
         answer:
-          "Có! Gói Starter miễn phí mãi mãi, gồm tín hiệu AI cơ bản, danh sách theo dõi 5 mã, bản tin thị trường hằng ngày và hỗ trợ email. Đây là cách tốt để làm quen trước khi nâng cấp Pro cho tính năng nâng cao.",
+          "Có! Gói Free miễn phí mãi mãi, gồm tín hiệu AI cơ bản, danh sách theo dõi 5 mã, bản tin thị trường hằng ngày và hỗ trợ email. Đây là cách tốt để làm quen trước khi nâng cấp Pro cho tính năng nâng cao.",
       },
     ],
   },
@@ -497,6 +500,8 @@ const vi: LandingCopy = {
     },
     copyright: (year) =>
       `© ${year} ALumiEye. Mọi quyền được bảo lưu.`,
+    disclaimer:
+      "ALumiEye cung cấp thông tin và phân tích thị trường, không phải lời khuyên đầu tư. Giao dịch có rủi ro mất vốn đáng kể; hiệu suất quá khứ không đảm bảo kết quả tương lai.",
   },
 };
 

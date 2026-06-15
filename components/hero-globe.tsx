@@ -17,7 +17,7 @@ export function HeroGlobe() {
         dpr={[1, 2]}
         gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
         style={{ position: "absolute", inset: 0 }}
-        className="!h-full !w-full max-sm:opacity-90"
+        className="!h-full !w-full max-sm:opacity-40"
       >
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />

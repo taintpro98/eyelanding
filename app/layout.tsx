@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SuppressThreeWarnings } from "@/components/suppress-three-warnings";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -58,11 +59,13 @@ export default function RootLayout({
   return (
     <html
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body
         className="flex min-h-screen min-w-0 flex-col overflow-x-clip bg-background text-foreground antialiased pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]"
       >
+        <SuppressThreeWarnings />
         {children}
       </body>
     </html>

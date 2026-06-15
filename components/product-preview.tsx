@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Database,
   ScanSearch,
@@ -7,12 +5,12 @@ import {
   Lightbulb,
 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { useLandingCopy } from "@/hooks/use-landing-copy";
+import { getLandingCopy } from "@/lib/landing-i18n";
 
 const icons = [Database, ScanSearch, Filter, Lightbulb];
 
-export function ProductPreview() {
-  const t = useLandingCopy();
+export function ProductPreview({ lang }: { lang: string }) {
+  const t = getLandingCopy(lang);
   const steps = t.product.steps;
 
   return (
