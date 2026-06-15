@@ -9,7 +9,7 @@ import {
   docsPath,
   landingHashHref,
   localePrefix,
-  signupUrl,
+  signupLinkProps,
 } from "@/lib/locale-path";
 import { getLandingCopy } from "@/lib/landing-i18n";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -21,7 +21,7 @@ export function Navbar({ lang }: { lang: string }) {
   const p = localePrefix(lang);
   const homeHref = p ? `${p}/` : "/";
   const h = (fragment: string) => landingHashHref(lang, fragment);
-  const ctaHref = signupUrl(lang);
+  const ctaProps = signupLinkProps(lang);
 
   const navLinks = [
     { href: h("#features"), label: t.nav.features },
@@ -79,7 +79,7 @@ export function Navbar({ lang }: { lang: string }) {
           <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <Link
-              href={ctaHref}
+              {...ctaProps}
               className={cn(
                 "hidden h-11 items-center justify-center rounded-xl px-6 text-base font-semibold outline-none sm:inline-flex",
                 "bg-primary text-primary-foreground",
@@ -127,7 +127,7 @@ export function Navbar({ lang }: { lang: string }) {
             </Link>
           ))}
           <Link
-            href={ctaHref}
+            {...ctaProps}
             onClick={() => setMobileMenuOpen(false)}
             className="mt-3 flex h-12 items-center justify-center rounded-xl bg-primary text-base font-semibold text-primary-foreground outline-none transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none"
           >

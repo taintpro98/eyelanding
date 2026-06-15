@@ -160,29 +160,29 @@ const en: LandingCopy = {
     eyebrow: "Pipeline",
     heading: "How ALumiEye works",
     subheading:
-      "Our platform transforms raw market data into actionable intelligence through a proven pipeline.",
+      "From raw market data to a signal on your screen — here is every step.",
     stepLabel: (n) => `Step ${n}`,
     dashboardLabel: "ALumiEye Dashboard — Live",
     steps: [
       {
-        title: "Market data ingestion",
+        title: "Market data collection",
         description:
-          "Aggregate real-time data from exchanges, dark pools, and alternative sources.",
+          "eyebroker pulls live price and volume data from HOSE (Vietnamese stocks) and crypto exchanges around the clock.",
       },
       {
-        title: "Pattern detection",
+        title: "Signal generation",
         description:
-          "AI identifies recurring patterns and anomalies across historical and live data.",
+          "The signal engine analyses each asset and emits a signal — Open, Close, Increase, or Decrease — with a strength score based on how many indicators agree.",
       },
       {
-        title: "AI signal filtering",
+        title: "Real-time delivery",
         description:
-          "Machine learning filters noise and surfaces high-probability opportunities.",
+          "Signals appear instantly on your Signals page, colour-coded by strength. Filter by symbol, direction, or signal type to focus on what matters to you.",
       },
       {
-        title: "Trading insights",
+        title: "Track and manage",
         description:
-          "Actionable recommendations with risk-adjusted expected value and timing.",
+          "Open a position, then follow it in Positions and Portfolio. Use the Analysis page to check any asset's A–F trend rating before you act.",
       },
     ],
   },
@@ -368,29 +368,29 @@ const vi: LandingCopy = {
     eyebrow: "Quy trình",
     heading: "ALumiEye hoạt động thế nào",
     subheading:
-      "Nền tảng biến dữ liệu thô thành thông tin hành động qua một quy trình đã được kiểm chứng.",
+      "Từ dữ liệu thị trường thô đến tín hiệu trên màn hình bạn — đây là từng bước.",
     stepLabel: (n) => `Bước ${n}`,
     dashboardLabel: "Bảng điều khiển ALumiEye — Trực tiếp",
     steps: [
       {
         title: "Thu thập dữ liệu thị trường",
         description:
-          "Tổng hợp dữ liệu thời gian thực từ sàn, dark pool và nguồn thay thế.",
+          "eyebroker lấy dữ liệu giá và khối lượng trực tiếp từ HOSE (chứng khoán Việt Nam) và sàn crypto liên tục 24/7.",
       },
       {
-        title: "Phát hiện mẫu hình",
+        title: "Tạo tín hiệu",
         description:
-          "AI nhận diện mẫu hình lặp lại và bất thường trên dữ liệu lịch sử và trực tiếp.",
+          "Động cơ tín hiệu phân tích từng tài sản và phát ra tín hiệu — Mở, Đóng, Tăng hoặc Giảm vị thế — kèm điểm độ mạnh dựa trên số chỉ báo đồng thuận.",
       },
       {
-        title: "Lọc tín hiệu AI",
+        title: "Giao tín hiệu theo thời gian thực",
         description:
-          "Học máy loại bỏ nhiễu và làm nổi bật cơ hội xác suất cao.",
+          "Tín hiệu xuất hiện ngay lập tức trên trang Tín hiệu, được phân màu theo độ mạnh. Lọc theo mã, hướng hoặc loại tín hiệu để tập trung vào điều quan trọng.",
       },
       {
-        title: "Thông tin giao dịch",
+        title: "Theo dõi và quản lý",
         description:
-          "Khuyến nghị hành động kèm giá trị kỳ vọng điều chỉnh rủi ro và thời điểm.",
+          "Mở vị thế, sau đó theo dõi trong Vị thế và Danh mục. Dùng trang Phân tích để kiểm tra xếp hạng xu hướng A–F của bất kỳ tài sản nào trước khi hành động.",
       },
     ],
   },

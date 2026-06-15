@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { signupUrl } from "@/lib/locale-path";
+import { signupLinkProps } from "@/lib/locale-path";
 import { getLandingCopy } from "@/lib/landing-i18n";
 
 export function CTA({ lang }: { lang: string }) {
   const t = getLandingCopy(lang);
-  const href = signupUrl(lang);
+  const linkProps = signupLinkProps(lang);
 
   return (
     <section
@@ -30,7 +30,7 @@ export function CTA({ lang }: { lang: string }) {
           {t.cta.description}
         </p>
         <Link
-          href={href}
+          {...linkProps}
           className="mx-auto mt-8 inline-flex h-12 min-h-[48px] w-full max-w-xs touch-manipulation items-center justify-center rounded-2xl bg-primary px-6 text-base font-semibold text-primary-foreground shadow-[0_0_40px_-8px_rgba(52,211,153,0.55)] outline-none transition-all duration-300 hover:bg-primary/92 hover:shadow-[0_0_52px_-6px_rgba(52,211,153,0.65)] focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98] motion-reduce:transition-none sm:mt-10 sm:w-auto sm:min-w-[200px] sm:px-8 sm:hover:scale-[1.02]"
         >
           {t.cta.button}

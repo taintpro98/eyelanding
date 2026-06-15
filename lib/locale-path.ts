@@ -32,6 +32,19 @@ export function signupUrl(lang: string): string {
   return landingHashHref(lang, "#cta");
 }
 
+/** Link props for every CTA button — opens external signup in a new tab. */
+export function signupLinkProps(lang: string): {
+  href: string;
+  target?: string;
+  rel?: string;
+} {
+  const href = signupUrl(lang);
+  const isExternal = href.startsWith("http");
+  return isExternal
+    ? { href, target: "_blank", rel: "noopener noreferrer" }
+    : { href };
+}
+
 /**
  * Path without locale prefix (`/` and `/docs/...` for default language;
  * `/vi` → `/`, `/vi/docs` → `/docs`).

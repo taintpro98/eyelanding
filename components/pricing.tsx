@@ -1,12 +1,12 @@
 import { Check } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { signupUrl } from "@/lib/locale-path";
+import { signupLinkProps } from "@/lib/locale-path";
 import { getLandingCopy } from "@/lib/landing-i18n";
 
 export function Pricing({ lang }: { lang: string }) {
   const t = getLandingCopy(lang);
-  const ctaHref = signupUrl(lang);
+  const ctaProps = signupLinkProps(lang);
   const plans = t.pricing.plans;
 
   return (
@@ -75,7 +75,7 @@ export function Pricing({ lang }: { lang: string }) {
               </CardContent>
               <CardFooter className="bg-transparent">
                 <a
-                  href={ctaHref}
+                  {...ctaProps}
                   className={cn(
                     "flex h-11 w-full items-center justify-center rounded-xl border px-4 text-base font-semibold outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-reduce:transition-none",
                     plan.highlighted

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
@@ -107,8 +106,7 @@ export default async function Home({
         <CTA lang={lang} />
         <Footer lang={lang} />
       </main>
-      <Script
-        id="faq-schema"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />

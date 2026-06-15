@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { HeroGlobe } from "./hero-globe";
-import { signupUrl, landingHashHref } from "@/lib/locale-path";
+import { signupLinkProps, landingHashHref } from "@/lib/locale-path";
 import { getLandingCopy } from "@/lib/landing-i18n";
 
 export function Hero({ lang }: { lang: string }) {
@@ -44,7 +44,7 @@ export function Hero({ lang }: { lang: string }) {
 
         <div className="mx-auto mt-9 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mt-12 sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-5">
           <Link
-            href={signupUrl(lang)}
+            {...signupLinkProps(lang)}
             className="group inline-flex h-12 min-h-[48px] w-full touch-manipulation items-center justify-center rounded-2xl bg-primary px-6 text-base font-semibold text-primary-foreground shadow-[0_0_40px_-8px_rgba(52,211,153,0.55)] outline-none transition-all duration-300 hover:bg-primary/92 hover:shadow-[0_0_48px_-6px_rgba(52,211,153,0.65)] focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background active:scale-[0.98] motion-reduce:transition-none motion-reduce:active:scale-100 sm:w-auto sm:min-w-[160px] sm:px-8 sm:hover:scale-[1.02] motion-reduce:sm:hover:scale-100"
           >
             {t.hero.startFree}
